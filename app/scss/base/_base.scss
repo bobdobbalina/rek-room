@@ -1,9 +1,7 @@
-// Bitters 2.0.4
-// https://github.com/thoughtbot/bitters
-// Copyright 2013-2019 thoughtbot, inc.
-// MIT License
+@import "vars/tier1";
+@import "vars/tier2";
 
-@import "variables";
+@import "vars/custom-properties";
 
 @import "buttons";
 @import "forms";
@@ -12,3 +10,8 @@
 @import "media";
 @import "tables";
 @import "typography";
+
+
+
+
+// @import '../tests/color-tests'

@@ -3,10 +3,10 @@ button,
 [type="reset"],
 [type="submit"] {
   appearance: none;
-  background-color: $action-color;
+  background-color: var(--action-color);
   border: 0;
   border-radius: var(--border-radius);
-  color: $action-color--contrast;
+  color: var(--action-color)--contrast;
   cursor: pointer;
   display: inline-block;
   font-family: var(--font-family-base);
@@ -23,7 +23,7 @@ button,
   white-space: nowrap;
 
   &:hover {
-    background-color: $action-color--alt;
+    background-color: var(--action-color)--alt;
   }
 
   &:focus {

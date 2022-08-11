@@ -1,7 +1,7 @@
 html {
-  color: $font-color--base;
+  color: var(--font-color-base);
   font-family: var(--font-family);
-  font-size: 100%;
+  font-size: var(--font-size-base);
   line-height: var(--line-height);
 }
 
@@ -17,17 +17,34 @@ h6 {
   margin: 0 0 var(--spacing--small);
 }
 
+h1,
+.display-large {
+  font-size: var(--font-size-display-lg);
+}
+
+.display-medium {
+  font-size: var(--font-size-display-md);
+}
+
+.display-small {
+  font-size: var(--font-size-display-sm);
+}
+
+.h1-medium {
+  font-size: var(--font-size-h1-md);
+}
+
 p {
   margin: 0 0 var(--spacing--small);
 }
 
 a {
-  color: $action-color;
+  color: var(--action-color);
   text-decoration-skip-ink: auto;
   transition: color var(--duration) var(--timing);
 
   &:hover {
-    color: $action-color--alt;
+    color: var(--action-color)--alt;
   }
 
   &:focus {

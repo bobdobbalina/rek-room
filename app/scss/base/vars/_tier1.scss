@@ -1,0 +1,105 @@
+// COLORS
+:root {
+    --color-black: #000000;
+    --color-white: #FFFFFF;
+
+    --color-neutral: --color-black;
+    --color-neutral-10: lighten(--color-black, 10%);
+    --color-neutral-20: lighten(--color-black, 20%);
+    --color-neutral-30: lighten(--color-black, 30%);
+    --color-neutral-40: lighten(--color-black, 40%);
+    --color-neutral-50: lighten(--color-black, 50%);
+    --color-neutral-60: lighten(--color-black, 60%);
+    --color-neutral-70: lighten(--color-black, 70%);
+    --color-neutral-80: lighten(--color-black, 80%);
+    --color-neutral-90: lighten(--color-black, 90%);
+    --color-neutral-100: lighten(--color-black, 100%);
+
+    --color-primary: #61C2F1;
+    --color-primary-10: mix(--color-white, --color-primary, 10%);
+    --color-primary-20: mix(--color-white, --color-primary, 20%);
+    --color-primary-30: mix(--color-white, --color-primary, 30%);
+    --color-primary-40: mix(--color-white, --color-primary, 40%);
+    --color-primary-50: mix(--color-white, --color-primary, 50%);
+    --color-primary-60: mix(--color-white, --color-primary, 60%);
+    --color-primary-70: mix(--color-white, --color-primary, 70%);
+    --color-primary-80: mix(--color-white, --color-primary, 80%);
+    --color-primary-90: mix(--color-white, --color-primary, 90%);
+
+    --color-secondary: #f161f1;
+    --color-secondary-10: mix(--color-white, --color-secondary, 10%);
+    --color-secondary-20: mix(--color-white, --color-secondary, 20%);
+    --color-secondary-30: mix(--color-white, --color-secondary, 30%);
+    --color-secondary-40: mix(--color-white, --color-secondary, 40%);
+    --color-secondary-50: mix(--color-white, --color-secondary, 50%);
+    --color-secondary-60: mix(--color-white, --color-secondary, 60%);
+    --color-secondary-70: mix(--color-white, --color-secondary, 70%);
+    --color-secondary-80: mix(--color-white, --color-secondary, 80%);
+    --color-secondary-90: mix(--color-white, --color-secondary, 90%);
+
+    --color-accent: #9d61f1;
+    --color-accent-10: mix(--color-white, --color-secondary, 10%);
+    --color-accent-20: mix(--color-white, --color-secondary, 20%);
+    --color-accent-30: mix(--color-white, --color-secondary, 30%);
+    --color-accent-40: mix(--color-white, --color-secondary, 40%);
+    --color-accent-50: mix(--color-white, --color-secondary, 50%);
+    --color-accent-60: mix(--color-white, --color-secondary, 60%);
+    --color-accent-70: mix(--color-white, --color-secondary, 70%);
+    --color-accent-80: mix(--color-white, --color-secondary, 80%);
+    --color-accent-90: mix(--color-white, --color-secondary, 90%);
+
+    // Font Colors
+    --font-color-base: --color-neutral-90;
+    --action-color: --color-primary;
+    --action-color--alt: --color-secondary-30;
+    --action-color--contrast: --color-white;
+
+    // Background Colors
+    --viewport-background-color: --color-white;
+
+
+    // SHADOWS
+    --elevation1: 0px 1px 2px rgba(0, 0, 0, 0.3),
+        0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+    --elevation2: 0px 1px 2px rgba(0, 0, 0, 0.3),
+        0px 2px 6px 2px rgba(0, 0, 0, 0.15);
+    --elevation3: 0px 3px 9px 3px rgba(0, 0, 0, 0.12),
+        0px 1px 3px rgba(0, 0, 0, 0.3);
+    --elevation4: 0px 2px 14px 4px rgba(0, 0, 0, 0.15),
+        0px 2px 5px rgba(0, 0, 0, 0.3);
+    --elevation5: 0px 8px 12px 6px rgba(0, 0, 0, 0.15),
+        0px 4px 4px rgba(0, 0, 0, 0.3);
+
+
+    // FONTS
+    --font-primary: TimesNewRoman,
+        Times New Roman,
+        Times,
+        Baskerville,
+        Georgia,
+        serif;
+    --font-secondary: Arial,
+        Helvetica Neue,
+        Helvetica,
+        sans-serif;
+    --font-tertiary: Courier New,
+        Courier,
+        Lucida Sans Typewriter,
+        Lucida Typewriter,
+        monospace;
+
+    // Font Sizes
+    --font-size-base: 1em;
+
+    --font-size-display-lg: 3.5em;
+    --font-size-display-md: 3em;
+    --font-size-display-sm: 2.5em;
+
+    --font-size-h1-md: 2.125em;
+    --font-size-h2-md: 1.75em;
+    --font-size-h3-md: 1.5em;
+
+    --font-size-body-lg: 1.125em;
+    --font-size-body-sm: 0.875em;
+
+}
