@@ -1,7 +1,5 @@
-@import "vars/tier1";
-@import "vars/tier2";
-
-@import "vars/custom-properties";
+@import "vars/core";
+@import "vars/overrides";
 
 @import "buttons";
 @import "forms";
