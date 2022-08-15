@@ -54,7 +54,7 @@ textarea {
   box-shadow: var(--form-box-shadow);
   box-sizing: border-box;
   margin-bottom: var(--spacing-small);
-  padding: calc(var(--spacing) / 3);
+  padding: var(--spacing);
   transition: border-color var(--duration) var(--timing);
   width: 100%;
 

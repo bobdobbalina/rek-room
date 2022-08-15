@@ -3,34 +3,43 @@
   // TODO: TEST OUT OVERRIDES FOR DASHBOARD
 
   // Colors
-  // --color-primary-hue: 30;
-  // --color-primary-saturation: 100%;
-  // --color-primary-lightness: 50%;
+  --color-neutral-hue: 0;
+  --color-neutral-saturation: 0%;
+  --color-neutral-lightness: 11%;
 
-  // --color-secondary-hue: 66;
-  // --color-secondary-saturation: 84%;
-  // --color-secondary-lightness: 66%;
+  --color-primary-hue: 248;
+  --color-primary-saturation: 96%;
+  --color-primary-lightness: 52%;
 
-  // --color-accent-hue: 200;
-  // --color-accent-saturation: 84%;
-  // --color-accent-lightness: 66%;
+  --color-secondary-hue: 0;
+  --color-secondary-saturation: 100%;
+  --color-secondary-lightness: 70%;
+
+  --color-accent-hue: var(--color-primary-hue);
+  --color-accent-saturation: var(--color-primary-saturation);
+  --color-accent-lightness: var(--color-primary-lightness);
+
+  // Font Colors
+  --font-color-base: var(--color-white);
+  --action-color: var(--color-primary);
+  --action-color--alt: var(--color-primary-60);
+  --action-color--contrast: var(--color-white);
+
+  // Background Colors
+  --viewport-background-color: var(--color-neutral);
 
   // // Fonts
-  // --font-primary: TimesNewRoman,
-  //   Times New Roman,
-  //   Times,
-  //   Baskerville,
-  //   Georgia,
-  //   serif;
-  // --font-secondary: Arial,
-  //   Helvetica Neue,
-  //   Helvetica,
-  //   sans-serif;
-  // --font-tertiary: Courier New,
-  //   Courier,
-  //   Lucida Sans Typewriter,
-  //   Lucida Typewriter,
-  //   monospace;
+  --font-primary: 'Satoshi-Regular',
+    Arial,
+    Helvetica Neue,
+    Helvetica,
+    sans-serif;
+  --font-secondary: var(--font-primary);
+  --font-tertiary: Courier New,
+    Courier,
+    Lucida Sans Typewriter,
+    Lucida Typewriter,
+    monospace;
 
   // // Font Sizes
   // --font-size-base: 1em;
@@ -47,7 +56,7 @@
   // --font-size-body-sm: 0.875em;
 
   // // Typography
-  // --font-family: var(--font-secondary);
+  --font-family: var(--font-primary);
   // --font-family-heading: var(--font-family);
 
   // --font-weight-thin: 100;
@@ -65,13 +74,13 @@
   // --line-height-heading: 1.2;
 
   // // Other Sizes
-  // --border-radius: 0.1875rem;
-  // --spacing: 1.5rem;
-  // --spacing-small: 0.75rem;
+  --border-radius: 0;
+  --spacing: 1rem;
+  // --spacing-small: calc(var(--spacing) / 2);
 
   // // Borders
   // --border-width: 0.0625rem;
-  // --border: var(--border-width) solid currentColor;
+  --border: var(--border-width) solid var(--color-neutral-10);
 
   // // Focus
   // --focus-outline-width: 0.1875rem;
