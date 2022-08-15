@@ -1,6 +1,7 @@
 html {
   background-color: var(--viewport-background-color);
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 *,
@@ -12,4 +13,9 @@ html {
 html,
 body {
   height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
 }
