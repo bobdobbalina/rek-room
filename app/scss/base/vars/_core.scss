@@ -227,7 +227,7 @@
   // Other Sizes
   --border-radius: 0.1875rem;
   --spacing: 1.5rem;
-  --spacing-small: 0.75rem;
+  --spacing-small: calc(var(--spacing) / 2);
 
   // Borders
   --border-width: 0.0625rem;
