@@ -16,6 +16,7 @@
     "gulp-postcss": "^9.0.0",
     "gulp-sass": "^5.0.0",
     "gulp-terser": "^2.0.1",
+    "normalize-opentype.css": "^0.2.4",
     "normalize.css": "^8.0.1",
     "postcss": "^8.3.5",
     "sass": "^1.35.2"
