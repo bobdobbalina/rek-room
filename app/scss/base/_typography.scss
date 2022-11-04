@@ -5,6 +5,13 @@ html {
   line-height: var(--line-height);
 }
 
+body {
+  ::selection {
+    background-color: var(--action-color);
+    color: var(--action-color--contrast);
+  }
+}
+
 h1,
 h2,
 h3,
