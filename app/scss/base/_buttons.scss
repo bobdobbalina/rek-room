@@ -1,4 +1,5 @@
 button,
+.button,
 [type="button"],
 [type="reset"],
 [type="submit"] {
@@ -6,33 +7,57 @@ button,
   background-color: var(--action-color);
   border: 0;
   border-radius: var(--border-radius);
-  color: var(--action-color)--contrast;
+  color: var(--action-color--contrast);
   cursor: pointer;
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-family: var(--font-family-base);
-  font-size: 1rem;
+  font-size: 0.857142857142857rem;
   -webkit-font-smoothing: antialiased;
-  font-weight: 600;
+  font-weight: bold;
   line-height: 1;
-  padding: var(--spacing-small) var(--spacing);
+  width: 100%;
+  height: 48px;
+  padding: 0;
   text-align: center;
   text-decoration: none;
+  text-transform: uppercase;
   transition: background-color var(--duration) var(--timing);
   user-select: none;
   vertical-align: middle;
   white-space: nowrap;
 
-  &:hover {
+  &:hover,
+  &:focus,
+  &:active {
     background-color: var(--action-color--alt);
+    color: var(--action-color--contrast);
   }
 
-  &:focus {
-    outline: var(--focus-outline);
-    outline-offset: var(--focus-outline-offset);
-  }
-
-  &:disabled {
+  &:disabled,
+  &.disabled {
     cursor: not-allowed;
-    opacity: 0.5;
+    background-color: var(--color-neutral-20);
+  }
+
+  &.secondary {
+    background-color: transparent;
+    color: var(--action-color);
+    border: var(--border);
+    bordder-color: var(--color-white);
+
+    &:hover {
+      background-color: var(--color-neutral-20);
+    }
+  }
+
+  &.icon {
+    background: transparent;
+    color: var(--action-color);
+    flex-shrink: 1;
+    padding: 0;
+    width: auto;
+    height: auto;
   }
 }

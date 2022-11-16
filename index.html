@@ -11,6 +11,10 @@
 
 <body style="padding: 4rem;">
 	<!-- Beginning of Styleguide -->
+	<div class="form-group">
+		<label class="required" for="EmailAddress">Email Address:</label>
+		<input type="email" id="EmailAddress" name="EmailAddress" autocapitalize="off" autocorrect="off" autocomplete="email" required>
+	</div>
 
 	<h1>Markup Styleguide</h1>
 
@@ -450,10 +454,29 @@
 			</div>
 
 			<div class="form-group">
-				<button class="button">Button Element</button>
+				<a href="#" class="button">href button</a>
+				<a href="#" class="button secondary">href secondary</a>
+				<button class="button">Button</button>
+				<button class="secondary">secondary</button>
 				<input class="button" type="reset" value="Clear" />
 				<input class="button" type="submit" value="Submit" />
 			</div>
+
+
+			<div class="button-container">
+				<a href="#" class="button">href button</a>
+				<a href="#" class="button disabled">href button disabled</a>
+				<a href="#" class="button secondary">href secondary</a>
+				<button class="button">Button</button>
+				<button class="button" disabled>Button disabled</button>
+				<button class="secondary">secondary</button>
+				<input class="button" type="reset" value="Clear" />
+				<input class="button" type="submit" value="Submit" />
+				<input class="button" type="reset" value="Clear disabled" disabled/>
+				<input class="button" type="submit" value="Submit disabled" disabled/>
+
+			</div>
+			<button class="icon">X</button>
 		</form>
 	</fieldset>
 

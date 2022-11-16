@@ -1,11 +1,13 @@
 html {
   color: var(--font-color-base);
   font-family: var(--font-family);
-  font-size: var(--font-size-base);
-  line-height: var(--line-height);
 }
 
 body {
+  font-size: var(--font-size-base);
+  font-weight: 300;
+  line-height: var(--line-height);
+
   ::selection {
     background-color: var(--action-color);
     color: var(--action-color--contrast);
@@ -19,16 +21,20 @@ h4,
 h5,
 h6 {
   font-family: var(--font-family-heading);
-  font-size: 1.25rem;
+  font-size: var(--font-size-h2-md);
+  font-weight: var(--font-weight-light);
   line-height: var(--line-height--heading);
-  margin: 0 0 var(--spacing-small);
+  margin: 0 0 0.75em;
   overflow-wrap: break-word;
   hyphens: auto;
 }
 
 h1,
+.h1
 .display-large {
   font-size: var(--font-size-display-lg);
+  text-transform: uppercase;
+  margin-bottom: 12px;
 }
 
 .display-medium {
@@ -41,6 +47,14 @@ h1,
 
 .h1-medium {
   font-size: var(--font-size-h1-md);
+}
+
+h2,
+.h2 {
+  font-size: var(--font-size-h2-md);
+  text-transform: none;
+  line-height: 1.1875;
+  margin-bottom: 12px;
 }
 
 p {

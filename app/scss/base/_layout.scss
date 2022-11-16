@@ -1,5 +1,4 @@
 html {
-  background-color: var(--viewport-background-color);
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
@@ -10,13 +9,20 @@ html {
   box-sizing: inherit;
 }
 
-html,
-body {
-  // height: 100%;
-}
-
 body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
-  // background-color: red;
+}
+
+.Root {
+  position: absolute;
+  top: 0;
+
+  &:before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: var(--color-black);
+    background: var(--viewport-background-color);
+  }
 }
