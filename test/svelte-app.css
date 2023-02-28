@@ -1,0 +1,24 @@
+#AT-app {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center
+}
+
+.logo.svelte-c9fbf7 {
+    height: 6em;
+    padding: 1.5em;
+    will-change: filter
+}
+
+.logo.svelte-c9fbf7:hover {
+    filter: drop-shadow(0 0 2em #646cffaa)
+}
+
+.logo.svelte.svelte-c9fbf7:hover {
+    filter: drop-shadow(0 0 2em #ff3e00aa)
+}
+
+.read-the-docs.svelte-c9fbf7 {
+    color: #888
+}
