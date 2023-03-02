@@ -9,7 +9,7 @@
 	<script defer src="/dist/script.js"></script>
 </head>
 
-<body style="padding: 4rem;">
+<body class="UIL UILPanel" style="padding: 4rem;">
 	<!-- Beginning of Styleguide -->
 
 	<h1>Markup Styleguide</h1>
@@ -291,12 +291,14 @@
 
 			<div class="form-group">
 				<label for="select_element1">Select Element:</label>
-				<select id="select_element1">
-					<option value="1">Option 1</option>
-					<option value="2">Option 2</option>
-					<option value="3">Option 3</option>
-					<option value="4">Option 4</option>
-				</select>
+				<div class="select-wrapper">
+					<select id="select_element1">
+						<option value="1">Option 1</option>
+						<option value="2">Option 2</option>
+						<option value="3">Option 3</option>
+						<option value="4">Option 4</option>
+					</select>
+				</div>
 			</div>
 
 			<div class="form-group">
@@ -346,25 +348,17 @@
 
 			<div class="form-group">
 				<h3>Checkboxes:</h3>
-				<ul>
-					<li>
-						<input type="checkbox" class="checkbox" name="checkboxes" value="check_1" />
-						<label for="check_1">Checkbox 1</label>
-					</li>
-					<li>
-						<input type="checkbox" class="checkbox" name="checkboxes" value="check_2" />
-						<label for="check_2">Checkbox 2</label>
-					</li>
-					<li>
-						<input type="checkbox" class="checkbox" name="checkboxes" value="check_3" />
-						<label for="check_3">Checkbox 3</label>
-					</li>
-					<li>
-						<input type="checkbox" class="checkbox" name="checkboxes" value="check_4" disabled />
-						<label for="check_4">Checkbox 4</label>
-					</li>
-				</ul>
+
 			</div>
+
+			<div class="form-group">
+				<div class="checkbox-label">checkbox label</div>
+				<div class="checkbox">
+					<input type="checkbox" id="switch" />
+					<label for="switch">Toggle</label>
+				</div>
+			</div>
+
 
 			<div class="form-group">
 				<label for="password">Password:</label>
@@ -380,6 +374,11 @@
 			<div class="form-group">
 				<label for="email">Email:</label>
 				<input type="email" id="email" />
+			</div>
+
+			<div class="form-group">
+				<label for="FirstName">First Name:</label>
+				<input type="text" id="FirstName" name="FirstName" autocorrect="off" autocomplete="given-name" placeholder="First Name" required>
 			</div>
 
 			<div class="form-group">
@@ -451,8 +450,14 @@
 
 			<div class="form-group">
 				<button class="button">Button Element</button>
+				<button class="">Hollow button</button>
 				<input class="button" type="reset" value="Clear" />
 				<input class="button" type="submit" value="Submit" />
+			</div>
+
+			<div class="form-group">
+				<button class="small">Log in with Goolge</button>
+				<button class="small solid">Small Button</button>
 			</div>
 		</form>
 	</fieldset>

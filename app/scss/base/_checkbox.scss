@@ -1,0 +1,52 @@
+$checkboxWidth: 44px;
+$checkboxHeight: 28px;
+$checkboxToggleSize: 12px;
+$checkboxSpacing: 8px;
+
+input[type="checkbox"],
+input[type="radio"] {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+
+  + label {
+    cursor: pointer;
+    border: var(--border);
+    text-indent: -9999px;
+    width: $checkboxWidth;
+    height: $checkboxHeight;
+    background: var(--color-black);
+    display: block;
+    border-radius: $checkboxHeight;
+    position: relative;
+  }
+
+  + label:after {
+    content: "";
+    position: absolute;
+    top: $checkboxSpacing;
+    left: $checkboxSpacing;
+    width: $checkboxToggleSize;
+    height: $checkboxToggleSize;
+    background-color: var(--color-action--disabled);
+    border-radius: $checkboxToggleSize;
+    transition: 0.3s;
+  }
+
+  &:checked + label {
+    background: var(--color-action);
+
+    &:after {
+      background-color: var(--color-white);
+    }
+  }
+
+  &:checked + label:after {
+    left: calc(100% - #{$checkboxSpacing});
+    transform: translateX(-100%);
+  }
+
+  + label:active:after {
+    width: 16px;
+  }
+}

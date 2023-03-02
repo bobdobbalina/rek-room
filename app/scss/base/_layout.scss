@@ -1,22 +1,11 @@
-html {
+& {
   background-color: var(--viewport-background-color);
   box-sizing: border-box;
   scroll-behavior: smooth;
-}
 
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
-
-html,
-body {
-  // height: 100%;
-}
-
-body {
-  min-height: 100vh;
-  text-rendering: optimizeSpeed;
-  // background-color: red;
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
 }

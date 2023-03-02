@@ -1,20 +1,14 @@
-@import "vars/core";
-@import "vars/overrides";
+.UIL {
+  @import "vars/core";
 
-@import "../../../node_modules/normalize.css/normalize";
-@import "../../../node_modules/normalize-opentype.css/normalize-opentype";
-@import "reset";
+  @import "reset";
 
-@import "buttons";
-@import "forms";
-@import "layout";
-@import "lists";
-@import "media";
-@import "tables";
-@import "typography";
+  @import "buttons";
+  @import "forms";
+  @import "checkbox";
+  @import "layout";
+  @import "media";
+  @import "typography";
 
-@import "utils";
-
-
-
-// @import '../tests/color-tests'
+  @import "utils";
+}
