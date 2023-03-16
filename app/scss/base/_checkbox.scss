@@ -3,11 +3,12 @@ $checkboxHeight: 28px;
 $checkboxToggleSize: 12px;
 $checkboxSpacing: 8px;
 
-input[type="checkbox"],
+input[type="checkbox"]:not(.regular-checkbox),
 input[type="radio"] {
   height: 0;
   width: 0;
-  visibility: hidden;
+  visibility: visible;
+  margin: 0;
 
   + label {
     cursor: pointer;
@@ -48,5 +49,66 @@ input[type="radio"] {
 
   + label:active:after {
     width: 16px;
+  }
+
+  &:focus-visible {
+    outline: none;
+    border: none;
+
+    + label,
+    + .label {
+      border: var(--border);
+      border-color: var(--color-action);
+    }
+
+    &:checked {
+      + label,
+      + .label {
+        border: var(--border);
+        border-color: var(--color-white);
+      }
+    }
+  }
+}
+
+$regularCheckboxSize: 20px;
+
+.checkbox-control {
+  display: flex;
+  gap: calc(var(--spacing-small) / 2);
+  align-items: center;
+  line-height: 1;
+}
+
+.regular-checkbox {
+  appearance: none;
+  background-color: var(--color-black);
+  margin: 0;
+  width: $regularCheckboxSize;
+  height: $regularCheckboxSize;
+  max-width: $regularCheckboxSize;
+  min-width: $regularCheckboxSize;
+
+  color: currentColor;
+  border: var(--border);
+  border-radius: calc(var(--border-radius) / 2);
+  transform: translateY(-0.075em);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:before {
+    border-radius: calc(var(--border-radius) / 4);
+    content: "";
+    width: calc($regularCheckboxSize / 2);
+    height: calc($regularCheckboxSize / 2);
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em var(--color-action);
+  }
+
+  &:checked::before {
+    transform: scale(1);
   }
 }

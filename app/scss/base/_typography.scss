@@ -6,8 +6,8 @@
   letter-spacing: 0.01em;
 
   ::selection {
-    background-color: var(--action-color);
-    color: var(--action-color--contrast);
+    background-color: var(--color-action);
+    color: var(--color-action--contrast);
   }
 
   p {
@@ -17,13 +17,8 @@
   }
 
   a {
-    color: var(--action-color);
     text-decoration-skip-ink: auto;
     transition: color var(--duration) var(--timing);
-
-    &:hover {
-      color: var(--action-color) --alt;
-    }
 
     &:focus {
       outline: var(--focus-outline);
