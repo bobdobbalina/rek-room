@@ -32,8 +32,11 @@
   --color-action--contrast: var(--color-white);
   --color-action--disabled: var(--color-neutral-70);
 
+  --color-icon-default: var(--color-neutral-70);
+  --color-divider-main: var(--color-neutral-40);
+
   // Background Colors
-  --viewport-background-color: var(--color-neutral-10);
+  --panel-background-color: var(--color-neutral-10);
 
   // Fonts
   --font-primary: "Manrope", Helvetica Neue, Helvetica, sans-serif;

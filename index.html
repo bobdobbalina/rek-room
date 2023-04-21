@@ -9,7 +9,7 @@
 	<script defer src="/dist/script.js"></script>
 </head>
 
-<body class="UIL UILPanel" style="padding: 4rem;">
+<body class="UIL UILPanel" style="padding: 4rem; background-color: var(--panel-background-color);">
 	<!-- Beginning of Styleguide -->
 
 	<h1>Markup Styleguide</h1>
@@ -373,8 +373,14 @@
 			</div>
 
 			<div class="form-group">
+				<label for="upload">Select File</label>
+				<input type="file" class="file" id="upload" />
+				<button class="small">Select File</button>
+			</div>
+
+			<div class="form-group">
 				<label for="file">File Input:</label>
-				<input type="file" class="file" id="file" />
+				<input type="file" class="file small" id="file" />
 			</div>
 			<h3>HTML5-specific Form Elements</h3>
 

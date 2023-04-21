@@ -101,8 +101,8 @@ $regularCheckboxSize: 20px;
   &:before {
     border-radius: calc(var(--border-radius) / 4);
     content: "";
-    width: calc($regularCheckboxSize / 2);
-    height: calc($regularCheckboxSize / 2);
+    width: calc(#{$regularCheckboxSize} / 2);
+    height: calc(#{$regularCheckboxSize} / 2);
     transform: scale(0);
     transition: 120ms transform ease-in-out;
     box-shadow: inset 1em 1em var(--color-action);
