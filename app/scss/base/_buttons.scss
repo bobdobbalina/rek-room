@@ -3,10 +3,10 @@ button,
 [type="reset"],
 [type="submit"] {
   appearance: none;
-  background-color: var(--action-color);
+  background-color: var(--color-action);
   border: 0;
   border-radius: var(--border-radius);
-  color: var(--action-color)--contrast;
+  color: var(--color-action)--contrast;
   cursor: pointer;
   display: inline-block;
   font-family: var(--font-family-base);
@@ -14,16 +14,16 @@ button,
   -webkit-font-smoothing: antialiased;
   font-weight: 600;
   line-height: 1;
-  padding: var(--spacing-small) var(--spacing);
+  padding: var(--spacing-sm) var(--spacing-base);
   text-align: center;
   text-decoration: none;
-  transition: background-color var(--duration) var(--timing);
+  transition: background-color var(--animation-duration) var(--animation-timing);
   user-select: none;
   vertical-align: middle;
   white-space: nowrap;
 
   &:hover {
-    background-color: var(--action-color--alt);
+    background-color: var(--color-action-alt);
   }
 
   &:focus {
