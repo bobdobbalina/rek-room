@@ -17,7 +17,8 @@ legend {
   padding: 0;
 }
 
-label {
+label,
+.toggle-label {
   display: block;
   font-weight: 600;
   margin-bottom: var(--spacing-sm);
@@ -54,6 +55,7 @@ select,
 [type="time"],
 [type="url"],
 [type="week"],
+[type="datalist"],
 input:not([type]),
 textarea {
   appearance: none;
@@ -122,8 +124,11 @@ select {
 [type="color"] {
   -webkit-appearance: none;
   border: none;
+  border-radius: var(--border-radius);
   width: 32px;
   height: 32px;
+  padding: 0;
+  overflow: hidden;
 }
 
 [type="color"]::-webkit-color-swatch-wrapper {

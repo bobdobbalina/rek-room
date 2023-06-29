@@ -89,3 +89,8 @@ hr {
   border-top: 0;
   margin: var(--spacing-base) 0;
 }
+
+pre {
+  max-width: 100%;
+  overflow-x: auto;
+}

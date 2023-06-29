@@ -24,7 +24,7 @@
   --color-neutral-10: var(--color-black);
 
   --color-primary: #5FC1F1;
-  --color-secondarary: #F15FF1;
+  --color-secondary: #F15FF1;
 
   --color-action: var(--color-primary);
   --color-action-light: color-mix(in srgb, var(--color-action) var(--light-percentage), var(--color-white));
@@ -94,10 +94,10 @@
 
   /* SPACING */
 
-  --spacing-base: var(--font-size-base);
+  --spacing-base: 2rem;
 
-  --spacing-xs: calc(var(--spacing-base) * 0.5);
-  --spacing-sm: calc(var(--spacing-base) * 0.75);
+  --spacing-xs: calc(var(--spacing-base) * 0.25);
+  --spacing-sm: calc(var(--spacing-base) * 0.5);
   --spacing-md: var(--spacing-base);
   --spacing-lg: calc(var(--spacing-base) * 1.5);
   --spacing-xl: calc(var(--spacing-base) * 2);
@@ -150,13 +150,13 @@
   --border-width: 0.0625rem;
   --border: var(--border-width) solid currentColor;
 
-  --border-radius: 0.1875rem;
+  --border-radius: 0.5rem;
 
 
   /* FOCUS */
 
-  --focus-outline-width: 0.1875rem;
-  --focus-outline-offset: 0.125rem;
+  --focus-outline-width: 0.5rem;
+  --focus-outline-offset: 0.5rem;
   --focus-outline: var(--focus-outline-width) solid var(--action-color);
 
 
@@ -171,5 +171,5 @@
 
   /* SCROLLBARS */
 
-  --scrollbar-width: 2px;
+  --scrollbar-width: 5px;
 }
