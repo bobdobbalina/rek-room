@@ -6,7 +6,7 @@ button,
   background-color: var(--color-action);
   border: 0;
   border-radius: var(--border-radius);
-  color: var(--color-action)--contrast;
+  color: var(--color-action-contrast);
   cursor: pointer;
   display: inline-block;
   font-family: var(--font-family-base);
@@ -14,7 +14,7 @@ button,
   -webkit-font-smoothing: antialiased;
   font-weight: 600;
   line-height: 1;
-  padding: var(--spacing-sm) var(--spacing-base);
+  padding: var(--spacing-sm) var(--spacing-sm);
   text-align: center;
   text-decoration: none;
   transition: background-color var(--animation-duration) var(--animation-timing);
@@ -23,10 +23,10 @@ button,
   white-space: nowrap;
 
   &:hover {
-    background-color: var(--color-action-alt);
+    background-color: var(--color-action-light);
   }
 
-  &:focus {
+  &:focus-visible {
     outline: var(--focus-outline);
     outline-offset: var(--focus-outline-offset);
   }

@@ -73,7 +73,7 @@ a {
   transition: color var(--animation-duration) var(--animation-timing);
 
   &:hover {
-    color: var(--color-action-alt);
+    color: var(--color-action-light);
   }
 
   &:focus {

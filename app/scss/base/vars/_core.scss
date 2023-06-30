@@ -147,7 +147,7 @@
 
   /* BORDERS & RADIUS */
 
-  --border-width: 0.0625rem;
+  --border-width: 1px;
   --border: var(--border-width) solid currentColor;
 
   --border-radius: 0.5rem;
@@ -155,9 +155,9 @@
 
   /* FOCUS */
 
-  --focus-outline-width: 0.5rem;
-  --focus-outline-offset: 0.5rem;
-  --focus-outline: var(--focus-outline-width) solid var(--action-color);
+  --focus-outline-width: 1px;
+  --focus-outline-offset: 2px;
+  --focus-outline: var(--focus-outline-width) solid var(--color-action);
 
 
   /* SHADOWS */

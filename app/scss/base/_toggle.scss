@@ -62,6 +62,8 @@
 
     +label,
     +.label {
+      outline: var(--focus-outline);
+      outline-offset: var(--focus-outline-offset);
       border: var(--border);
       border-color: var(--color-action);
     }
