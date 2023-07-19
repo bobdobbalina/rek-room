@@ -1,10 +1,11 @@
 @import "vars/core";
-@import "vars/overrides";
+// @import "vars/overrides";
 
 // @import "../../../node_modules/normalize.css/normalize";
-@import "normalize";
-@import "../../../node_modules/normalize-opentype.css/normalize-opentype";
+// @import "normalize";
 // @import "reset";
+@import "preflight";
+@import "../../../node_modules/normalize-opentype.css/normalize-opentype";
 
 @import "buttons";
 @import "forms";

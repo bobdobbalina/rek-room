@@ -4,19 +4,8 @@ html {
   scroll-behavior: smooth;
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
-
-html,
-body {
-  // height: 100%;
-}
 
 body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
-  // background-color: red;
 }

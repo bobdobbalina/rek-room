@@ -148,7 +148,9 @@
   /* BORDERS & RADIUS */
 
   --border-width: 1px;
-  --border: var(--border-width) solid currentColor;
+  --border-style: solid;
+  --border-color: var(--color-neutral-5, currentColor);
+  --border: var(--border-width) var(--border-style) var(--border-color);
 
   --border-radius: 0.5rem;
 

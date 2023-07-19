@@ -5,6 +5,34 @@ ol {
   padding: 0;
 }
 
+ul.bullets {
+  list-style-type: disc;
+  margin: revert;
+  padding: revert;
+
+  ul {
+    list-style-type: circle;
+    margin: revert;
+    padding: revert;
+
+    ul {
+      list-style-type: square;
+    }
+  }
+}
+
+ol.bullets {
+  list-style-type: decimal;
+  margin-bottom: revert;
+  padding-left: revert;
+
+  ol {
+    list-style-type: decimal;
+    margin-bottom: revert;
+    padding-left: revert;
+  }
+}
+
 dl {
   margin: 0;
 }
