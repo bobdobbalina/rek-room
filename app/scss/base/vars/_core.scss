@@ -11,17 +11,17 @@
   --color-red: #e02045;
   --color-green: #4d967b;
 
-  --color-neutral-0: var(--color-white);
-  --color-neutral-1: color-mix(in srgb, var(--color-black) 10%, var(--color-white));
-  --color-neutral-2: color-mix(in srgb, var(--color-black) 20%, var(--color-white));
-  --color-neutral-3: color-mix(in srgb, var(--color-black) 30%, var(--color-white));
-  --color-neutral-4: color-mix(in srgb, var(--color-black) 40%, var(--color-white));
-  --color-neutral-5: color-mix(in srgb, var(--color-black) 50%, var(--color-white));
-  --color-neutral-6: color-mix(in srgb, var(--color-black) 60%, var(--color-white));
-  --color-neutral-7: color-mix(in srgb, var(--color-black) 70%, var(--color-white));
-  --color-neutral-8: color-mix(in srgb, var(--color-black) 80%, var(--color-white));
-  --color-neutral-9: color-mix(in srgb, var(--color-black) 90%, var(--color-white));
-  --color-neutral-10: var(--color-black);
+  --color-neutral-0: var(--color-black);
+  --color-neutral-1: color-mix(in srgb, var(--color-white) 10%, var(--color-black));
+  --color-neutral-2: color-mix(in srgb, var(--color-white) 20%, var(--color-black));
+  --color-neutral-3: color-mix(in srgb, var(--color-white) 30%, var(--color-black));
+  --color-neutral-4: color-mix(in srgb, var(--color-white) 40%, var(--color-black));
+  --color-neutral-5: color-mix(in srgb, var(--color-white) 50%, var(--color-black));
+  --color-neutral-6: color-mix(in srgb, var(--color-white) 60%, var(--color-black));
+  --color-neutral-7: color-mix(in srgb, var(--color-white) 70%, var(--color-black));
+  --color-neutral-8: color-mix(in srgb, var(--color-white) 80%, var(--color-black));
+  --color-neutral-9: color-mix(in srgb, var(--color-white) 90%, var(--color-black));
+  --color-neutral-10: var(--color-white);
 
   --color-primary: #5FC1F1;
   --color-secondary: #F15FF1;
