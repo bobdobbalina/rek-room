@@ -48,7 +48,7 @@
 
   --color-viewport-background: var(--color-white);
 
-  --color-text-primary: var(--color-neutral-9);
+  --color-text-primary: var(--color-neutral-8);
   --color-text-secondary: var(--color-neutral-6);
   --color-text-tertiary: var(--color-secondarary);
   --color-text-body: var(--color-text-primary);
@@ -174,4 +174,10 @@
   /* SCROLLBARS */
 
   --scrollbar-width: 5px;
+
+
+  /* BUTTONS */
+
+  --button-font-weight: var(--font-weight-normal);
+  --button-font-size: var(--font-size-body);
 }
