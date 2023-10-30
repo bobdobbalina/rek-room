@@ -25,12 +25,13 @@
 
   --color-primary: #5FC1F1;
   --color-secondary: #F15FF1;
+  --color-tertiary: #f1be5f;
 
   --color-action: var(--color-primary);
   --color-action-light: color-mix(in srgb, var(--color-action) var(--light-percentage), var(--color-white));
   --color-action-contrast: var(--color-white);
 
-  --color-highlight: var(--color-action);
+  --color-highlight: var(--color-secondary);
   --color-highlight-light: color-mix(in srgb, var(--color-highlight) var(--light-percentage), var(--color-white));
   --color-highlight-contrast: var(--color-white);
 

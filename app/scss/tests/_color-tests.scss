@@ -1,51 +1,110 @@
-.colors {
-  &.grid {
-    display: flex;
-  }
+.chip-container {
+  display: flex;
+  margin-bottom: var(--spacing-md);
 
-  .color {
+  .color-chip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100px;
     height: 100px;
-    border: 1px solid red;
+    border: 1px solid var(--color-viewport-background);
+    font-family: var(--font-tertiary-stack);
+    text-align: center;
+  }
 
-    &:nth-of-type(1) {
-      background-color: var(--color-primary);
+  &.brand {
+    .color-chip {
+      &:nth-of-type(1) {
+        background-color: var(--color-primary);
+      }
+
+      &:nth-of-type(2) {
+        background-color: var(--color-secondary);
+      }
+
+      &:nth-of-type(3) {
+        background-color: var(--color-tertiary);
+      }
     }
+  }
 
-    &:nth-of-type(2) {
-      background-color: var(--color-primary-10);
+  &.neutrals {
+    .color-chip {
+
+      &:nth-of-type(1) {
+        background-color: var(--color-neutral-0);
+      }
+
+      &:nth-of-type(2) {
+        background-color: var(--color-neutral-1);
+      }
+
+      &:nth-of-type(3) {
+        background-color: var(--color-neutral-2);
+      }
+
+      &:nth-of-type(4) {
+        background-color: var(--color-neutral-3);
+      }
+
+      &:nth-of-type(5) {
+        background-color: var(--color-neutral-4);
+      }
+
+      &:nth-of-type(6) {
+        background-color: var(--color-neutral-5);
+        color: var(--color-neutral-1)
+      }
+
+      &:nth-of-type(7) {
+        background-color: var(--color-neutral-6);
+        color: var(--color-neutral-1)
+      }
+
+      &:nth-of-type(8) {
+        background-color: var(--color-neutral-7);
+        color: var(--color-neutral-1)
+      }
+
+      &:nth-of-type(9) {
+        background-color: var(--color-neutral-8);
+        color: var(--color-neutral-1)
+      }
+
+      &:nth-of-type(10) {
+        background-color: var(--color-neutral-9);
+        color: var(--color-neutral-1)
+      }
+
+      &:nth-of-type(11) {
+        background-color: var(--color-neutral-10);
+        color: var(--color-neutral-1)
+      }
     }
+  }
 
-    &:nth-of-type(3) {
-      background-color: var(--color-primary-20);
-    }
+  &.ui {
+    .color-chip {
+      &:nth-of-type(1) {
+        background-color: var(--color-action);
+      }
 
-    &:nth-of-type(4) {
-      background-color: var(--color-primary-30);
-    }
+      &:nth-of-type(2) {
+        background-color: var(--color-highlight);
+      }
 
-    &:nth-of-type(5) {
-      background-color: var(--color-primary-40);
-    }
+      &:nth-of-type(3) {
+        background-color: var(--color-success);
+      }
 
-    &:nth-of-type(6) {
-      background-color: var(--color-primary-50);
-    }
+      &:nth-of-type(4) {
+        background-color: var(--color-warning);
+      }
 
-    &:nth-of-type(7) {
-      background-color: var(--color-primary-60);
-    }
-
-    &:nth-of-type(8) {
-      background-color: var(--color-primary-70);
-    }
-
-    &:nth-of-type(9) {
-      background-color: var(--color-primary-80);
-    }
-
-    &:nth-of-type(10) {
-      background-color: var(--color-primary-90);
+      &:nth-of-type(5) {
+        background-color: var(--color-error);
+      }
     }
   }
 }
