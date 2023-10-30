@@ -50,9 +50,9 @@
   // Typography
   --font-family: var(--font-primary);
 
-  --label1: normal 400 9px/120% var(--font-primary);
-  --label2: normal 400 10px/130% var(--font-primary);
-  --label3: normal 400 11px/130% var(--font-primary);
+  --label1: normal 400 10px/120% var(--font-primary);
+  --label2: normal 400 11px/130% var(--font-primary);
+  --label3: normal 400 12px/130% var(--font-primary);
   --label3-semi: normal 600 11px/130% var(--font-primary);
   --label3-bold: normal 700 11px/130% var(--font-primary);
   --label4-medium: 500 12px/15px var(--font-primary);
@@ -62,8 +62,8 @@
 
   // Other Sizes
   --border-radius: 8px;
-  --spacing: 16px;
-  --spacing-small: 12px;
+  --spacing: 10px;
+  --spacing-small: 8px;
 
   // Borders
   --border-width: 1px;

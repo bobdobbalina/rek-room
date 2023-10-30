@@ -26,18 +26,16 @@ legend {
   gap: var(--spacing-small);
   width: 100%;
 
-  > label,
-  > .label {
+  >label,
+  >.label {
     word-wrap: break-word;
     hyphens: auto;
     white-space: normal;
-    max-width: calc(
-      var(--form-group-width) - var(--form-content-max-width) -
-        var(--spacing-small)
-    );
+    padding-left: 5px;
+    max-width: calc( (var(--form-group-width) - var(--form-content-max-width) - var(--spacing-small)) * 1.5 );
   }
 
-  > *:last-child {
+  >*:last-child {
     width: 100%;
     max-width: var(--form-content-max-width);
   }
@@ -79,7 +77,7 @@ select,
 [type="password"],
 [type="search"],
 [type="tel"],
-[type="text"],
+[type="text"]:not(.no-style),
 [type="time"],
 [type="url"],
 [type="week"],
@@ -133,7 +131,7 @@ select {
   width: 100%;
 }
 
-input,
+input:not(.no-style),
 textarea,
 select {
   &:focus-visible {
