@@ -7,25 +7,35 @@
   --color-black: #000000;
   --color-white: #FFFFFF;
 
-  --color-yellow: #ffca30;
-  --color-red: #e02045;
-  --color-green: #4d967b;
+  --color-yellow: #EBCB8B;
+  --color-red: #BF616A;
+  --color-green: #A3BE8C;
 
-  --color-neutral-0: var(--color-white);
-  --color-neutral-1: color-mix(in srgb, var(--color-black) 10%, var(--color-white));
-  --color-neutral-2: color-mix(in srgb, var(--color-black) 20%, var(--color-white));
-  --color-neutral-3: color-mix(in srgb, var(--color-black) 30%, var(--color-white));
-  --color-neutral-4: color-mix(in srgb, var(--color-black) 40%, var(--color-white));
-  --color-neutral-5: color-mix(in srgb, var(--color-black) 50%, var(--color-white));
-  --color-neutral-6: color-mix(in srgb, var(--color-black) 60%, var(--color-white));
-  --color-neutral-7: color-mix(in srgb, var(--color-black) 70%, var(--color-white));
-  --color-neutral-8: color-mix(in srgb, var(--color-black) 80%, var(--color-white));
-  --color-neutral-9: color-mix(in srgb, var(--color-black) 90%, var(--color-white));
+  // --color-neutral-0: var(--color-white);
+  --color-neutral-0: color-mix(in hsl, var(--color-neutral-10) 0%, var(--color-white));
+  --color-neutral-1: color-mix(in hsl, var(--color-neutral-10) 10%, var(--color-white));
+  --color-neutral-1: color-mix(in hsl, var(--color-neutral-10) 10%, var(--color-white));
+  --color-neutral-2: color-mix(in hsl, var(--color-neutral-10) 20%, var(--color-white));
+  --color-neutral-3: color-mix(in hsl, var(--color-neutral-10) 30%, var(--color-white));
+  --color-neutral-4: color-mix(in hsl, var(--color-neutral-10) 40%, var(--color-white));
+  --color-neutral-5: color-mix(in hsl, var(--color-neutral-10) 50%, var(--color-white));
+  --color-neutral-6: color-mix(in hsl, var(--color-neutral-10) 60%, var(--color-white));
+  --color-neutral-7: color-mix(in hsl, var(--color-neutral-10) 70%, var(--color-white));
+  --color-neutral-8: color-mix(in hsl, var(--color-neutral-10) 80%, var(--color-white));
+  --color-neutral-9: color-mix(in hsl, var(--color-neutral-10) 90%, var(--color-white));
   --color-neutral-10: var(--color-black);
 
-  --color-primary: #5FC1F1;
-  --color-secondary: #F15FF1;
+  --color-primary: #81A1C1;
+  --color-primary-light: color-mix(in srgb, var(--color-primary) var(--light-percentage), var(--color-white));
+  --color-primary-contrast: var(--color-white);
+
+  --color-secondary: #B48EAD;
+  --color-secondary-light: color-mix(in srgb, var(--color-secondary) var(--light-percentage), var(--color-white));
+  --color-secondary-contrast: var(--color-white);
+
   --color-tertiary: #f1be5f;
+  --color-tertiary-light: color-mix(in srgb, var(--color-tertiary) var(--light-percentage), var(--color-white));
+  --color-tertiary-contrast: var(--color-white);
 
   --color-action: var(--color-primary);
   --color-action-light: color-mix(in srgb, var(--color-action) var(--light-percentage), var(--color-white));
@@ -74,15 +84,15 @@
   --font-weight-extra-bold: 800;
   --font-weight-black: 900;
 
-  --font-size-base: 1em;
+  --font-size-base: 1rem;
 
-  --font-size-display: 4.8em;
-  --font-size-h1: 3.6em;
-  --font-size-h2: 2.4em;
-  --font-size-h3: 1.6em;
-  --font-size-h4: 1.2em;
-  --font-size-h5: 1em;
-  --font-size-h6: 0.8em;
+  --font-size-display: 4.8rem;
+  --font-size-h1: 3.6rem;
+  --font-size-h2: 2.4rem;
+  --font-size-h3: 1.6rem;
+  --font-size-h4: 1.2rem;
+  --font-size-h5: 1rem;
+  --font-size-h6: 0.8rem;
 
   --font-size-body: var(--font-size-base);
   --font-size-body-sm: calc(var(--font-size-base) * 0.75);
@@ -140,8 +150,8 @@
   --ease-in-out-back: cubic-bezier(0.680, -0.550, 0.265, 1.550);
 
   --animation-duration: 0.5s;
-  --animation-duration-slow: var(--animation-duration) * 2;
-  --animation-duration-fast: var(--animation-duration) / 2;
+  --animation-duration-slow: calc(var(--animation-duration) * 2);
+  --animation-duration-fast: calc(var(--animation-duration) / 2);
 
   --animation-timing: var(--ease-out-cubic);
 
