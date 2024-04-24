@@ -1,8 +1,8 @@
 :root {
-  --toggle-width: 44px;
-  --toggle-height: 28px;
-  --toggle-switch-size: 12px;
-  --toggle-spacing: 8px;
+  --toggle-width: 32px;
+  --toggle-height: 12px;
+  --toggle-switch-size: var(--toggle-height);
+  --toggle-spacing: 0px;
 }
 
 .toggle {
@@ -23,7 +23,7 @@
     text-indent: -9999px;
     width: var(--toggle-width);
     height: var(--toggle-height);
-    background: var(--color-black);
+    background: transparent;
     display: block;
     border-radius: var(--toggle-height);
     position: relative;
@@ -37,16 +37,14 @@
     left: var(--toggle-spacing);
     width: var(--toggle-switch-size);
     height: var(--toggle-switch-size);
-    background-color: var(--color-action-contrast);
+    background-color: var(--color-action-primary);
     border-radius: var(--toggle-switch-size);
     transition: 0.3s;
   }
 
   &:checked+label {
-    background: var(--color-action);
-
     &:after {
-      background-color: var(--color-white);
+      background-color: var(--color-action-primary);
       left: calc(100% - var(--toggle-spacing));
       transform: translateX(-100%);
     }
@@ -56,14 +54,14 @@
     width: 16px;
   }
 
+  &:focus,
   &:focus-visible {
     outline: none;
     border: none;
 
     +label,
     +.label {
-      outline: var(--focus-outline);
-      outline-offset: var(--focus-outline-offset);
+      outline: none;
       border: var(--border);
       border-color: var(--color-action);
     }
@@ -73,7 +71,6 @@
       +label,
       +.label {
         border: var(--border);
-        border-color: var(--color-white);
       }
     }
   }

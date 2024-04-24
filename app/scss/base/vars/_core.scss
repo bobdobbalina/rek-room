@@ -7,9 +7,15 @@
   --color-black: #000000;
   --color-white: #FFFFFF;
 
-  --color-yellow: #EBCB8B;
-  --color-red: #BF616A;
-  --color-green: #A3BE8C;
+  // --color-yellow: #EBCB8B;
+  $scaled-yellow: scale-color(#EBCB8B, $saturation: 40%);
+  --color-yellow: #{$scaled-yellow};
+
+  $scaled-red: scale-color(#BF616A, $saturation: 40%);
+  --color-red: #{$scaled-red};
+
+  $scaled-green: scale-color(#A3BE8C, $saturation: 40%);
+  --color-green: #{$scaled-green};
 
   // --color-neutral-0: var(--color-white);
   --color-neutral-0: color-mix(in hsl, var(--color-neutral-10) 0%, var(--color-white));
@@ -25,23 +31,44 @@
   --color-neutral-9: color-mix(in hsl, var(--color-neutral-10) 90%, var(--color-white));
   --color-neutral-10: var(--color-black);
 
-  --color-primary: #81A1C1;
+
+  --color-text-primary: #987df8;
+  --color-text-secondary: #ebe6fc;
+  --color-text-body-secondary: #877ea9;
+  --color-text-inverse: #ffffff;
+
+  --color-icon-primary: #987df8;
+  --color-icon-secondary: #6b6876;
+  --color-icon-inverse: #ffffff;
+
+  --color-action-primary: #987df8;
+  --color-action-hover-selected: #7e5aff;
+  --color-action-inverse: #ffffff;
+
+  --color-background-panel: #07010a;
+  --color-background-main: #15061b;
+
+  --color-border-secondary: #6b6876;
+  --color-border-primary: #987df8;
+
+
+  --color-primary: var(--color-background-main);
   --color-primary-light: color-mix(in srgb, var(--color-primary) var(--light-percentage), var(--color-white));
   --color-primary-contrast: var(--color-white);
 
-  --color-secondary: #B48EAD;
+  --color-secondary: var(--color-text-primary);
   --color-secondary-light: color-mix(in srgb, var(--color-secondary) var(--light-percentage), var(--color-white));
   --color-secondary-contrast: var(--color-white);
 
-  --color-tertiary: #f1be5f;
+  --color-tertiary: var(--color-text-body-secondary);
   --color-tertiary-light: color-mix(in srgb, var(--color-tertiary) var(--light-percentage), var(--color-white));
   --color-tertiary-contrast: var(--color-white);
 
-  --color-action: var(--color-primary);
-  --color-action-light: color-mix(in srgb, var(--color-action) var(--light-percentage), var(--color-white));
-  --color-action-contrast: var(--color-white);
+  --color-action: var(--color-action-primary);
+  --color-action-light: var(--color-action-hover-selected);
+  --color-action-contrast: var(--color-action-inverse);
 
-  --color-highlight: var(--color-secondary);
+  --color-highlight: var(--color-action-hover-selected);
   --color-highlight-light: color-mix(in srgb, var(--color-highlight) var(--light-percentage), var(--color-white));
   --color-highlight-contrast: var(--color-white);
 
@@ -57,22 +84,26 @@
   --color-error-light: color-mix(in srgb, var(--color-error) var(--light-percentage), var(--color-white));
   --color-error-contrast: var(--color-action-contrast);
 
-  --color-viewport-background: var(--color-white);
+  --color-viewport-background: radial-gradient(at center bottom, rgba(47, 24, 97, 1.0), rgba(22, 6, 27, 1.0));
 
-  --color-text-primary: var(--color-neutral-8);
-  --color-text-secondary: var(--color-neutral-6);
-  --color-text-tertiary: var(--color-secondarary);
-  --color-text-body: var(--color-text-primary);
+  // --color-text-primary: var(--color-neutral-8);
+  // --color-text-secondary: var(--color-neutral-6);
+  --color-text-tertiary: var(--color-text-inverse);
+  --color-text-body: var(--color-text-body-secondary);
+
+
+
+
 
 
   /* TYPOGRAPHY */
 
-  --font-primary-stack: TimesNewRoman, Times New Roman, Times, Baskerville, Georgia, serif;
-  --font-secondary-stack: Arial, Helvetica Neue, Helvetica, sans-serif;
+  --font-primary-stack: 'Architekt', Arial, Helvetica Neue, Helvetica, sans-serif;
+  --font-secondary-stack: 'Manrope', Helvetica Neue, Helvetica, sans-serif;
   --font-tertiary-stack: Courier New, Courier, Lucida Sans Typewriter, Lucida Typewriter, monospace;
 
   --font-family: var(--font-secondary-stack);
-  --font-family-heading: var(--font-family);
+  --font-family-heading: var(--font-primary-stack);
 
   --font-weight-thin: 100;
   --font-weight-extra-light: 200;
@@ -160,7 +191,7 @@
 
   --border-width: 1px;
   --border-style: solid;
-  --border-color: var(--color-neutral-5, currentColor);
+  --border-color: var(--color-border-secondary, currentColor);
   --border: var(--border-width) var(--border-style) var(--border-color);
 
   --border-radius: 0.5rem;

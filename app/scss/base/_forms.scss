@@ -53,14 +53,40 @@ select,
 input:not([type]),
 textarea {
   appearance: none;
-  background-color: transparent;
-  border: var(--border);
-  border-radius: var(--border-radius);
+  // background-color: transparent;
+  // border: var(--border);
+  // border-radius: var(--border-radius);
   box-sizing: border-box;
   margin-bottom: var(--spacing-sm);
-  padding: calc(var(--spacing-base) / 3);
-  transition: border-color var(--animation-duration) var(--animation-timing);
+  // padding: calc(var(--spacing-base) / 3);
+  // transition: border-color var(--animation-duration) var(--animation-timing);
   width: 100%;
+  font-size: 15px;
+  line-height: normal;
+
+
+
+  appearance: none;
+  border: none;
+  color: var(--color-text-inverse);
+  outline: none;
+  background: none;
+  position: relative;
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
+  // height: 56px;
+  padding: 26px;
+  position: relative;
+
+
+
+  &:autofill {
+    background: none;
+    outline: none;
+    border: none;
+    color: red !important;
+  }
 
   &:focus,
   &:focus-visible {
@@ -77,8 +103,8 @@ textarea {
   }
 
   &::placeholder {
-    color: var(--font-color-base);
-    opacity: 0.25;
+    color: var(--color-text-primary);
+    // opacity: 0.25;
   }
 }
 
@@ -145,4 +171,36 @@ progress,
 
 .form-group {
   margin-bottom: var(--spacing-base);
+  position: relative;
+
+  --dark: var(--color-action-primary);
+  --light: var(--color-action-primary);
+
+  --vertical-cut: 16px;
+  --horizontal-cut: 12px;
+
+  &:has([type="search"]) {
+    &:before {
+      content: "";
+      display: block;
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(0deg, var(--dark), var(--light));
+      clip-path: polygon(0 var(--vertical-cut),
+          var(--horizontal-cut) 0,
+          100% 0,
+          100% calc(100% - var(--vertical-cut)),
+          calc(100% - var(--horizontal-cut)) 100%,
+          0 100%,
+
+          0 var(--vertical-cut),
+          1px calc(var(--vertical-cut) + 1px),
+          1px calc(100% - 1px),
+          calc(100% - var(--horizontal-cut) - 0.41px) calc(100% - 1px),
+          calc(100% - 1px) calc(100% - var(--vertical-cut) - 0.41px),
+          calc(100% - 1px) 1px,
+          calc(var(--horizontal-cut) + 0.41px) 1px,
+          1px calc(var(--vertical-cut) + 0.41px));
+    }
+  }
 }

@@ -1,0 +1,18 @@
+$fontPath: './fonts/';
+
+
+@font-face {
+  font-family: 'Manrope';
+  src: url($fontPath + 'Manrope-Regular.woff2') format('woff2'),
+    url($fontPath + 'Manrope-Regular.woff') format('woff');
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Architekt';
+  src: url($fontPath + 'NBArchitektStd-Regular.woff2') format('woff2'),
+    url($fontPath + 'NBArchitektStd-Regular.woff') format('woff');
+  font-style: normal;
+  font-weight: 400;
+}
