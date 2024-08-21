@@ -1,3 +1,23 @@
+// @font-face {
+//     font-family: "FKGrotesk";
+//     src: url("fonts/FKGrotesk-Bold.woff2") format("woff2");
+//     font-weight: bold;
+//     font-style: normal;
+// }
+
+// @font-face {
+//     font-family: "FKGrotesk";
+//     src: url("fonts/FKGrotesk-Medium.woff2") format("woff2");
+//     font-weight: 300;
+//     font-style: normal;
+// }
+
+@font-face {
+    font-family: "FKGrotesk";
+    src: url("fonts/FKGrotesk.woff2") format("woff2");
+}
+
+
 @import "vars/core";
 // @import "vars/overrides";
 
@@ -15,11 +35,11 @@
 @import "tables";
 @import "typography";
 
-@import "scrollbars";
+// @import "scrollbars";
 @import "toggle";
 
 @import "utils";
 
 
 
-// @import '../tests/color-tests'
+@import '../tests/color-tests'
