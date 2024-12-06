@@ -26,6 +26,7 @@ a[role="button"],
   vertical-align: middle;
   white-space: nowrap;
 
+  &:focus,
   &:hover {
     background-color: var(--color-action-light);
     border-color: var(--color-action-light);
@@ -60,6 +61,7 @@ a[role="button"],
     border: var(--border);
     border-color: var(--color-action);
 
+    &:focus,
     &:hover {
       color: var(--color-action-light);
       border-color: var(--color-action-light);
@@ -71,6 +73,7 @@ a[role="button"],
     border-color: var(--color-secondary);
     color: var(--color-secondary-contrast);
 
+    &:focus,
     &:hover {
       background-color: var(--color-secondary-light);
       border-color: var(--color-secondary-light);
@@ -82,6 +85,7 @@ a[role="button"],
       color: var(--color-secondary);
       border-color: var(--color-secondary);
 
+      &:focus,
       &:hover {
         color: var(--color-secondary-light);
         border-color: var(--color-secondary-light);
@@ -94,6 +98,7 @@ a[role="button"],
     border-color: var(--color-success);
     color: var(--color-success-contrast);
 
+    &:focus,
     &:hover {
       background-color: var(--color-success-light);
       border-color: var(--color-success-light);
@@ -105,6 +110,7 @@ a[role="button"],
       color: var(--color-success);
       border-color: var(--color-success);
 
+      &:focus,
       &:hover {
         color: var(--color-success-light);
         border-color: var(--color-success-light);
@@ -117,6 +123,7 @@ a[role="button"],
     border-color: var(--color-error);
     color: var(--color-error-contrast);
 
+    &:focus,
     &:hover {
       background-color: var(--color-error-light);
       border-color: var(--color-error-light);
@@ -128,6 +135,7 @@ a[role="button"],
       color: var(--color-error);
       border-color: var(--color-error);
 
+      &:focus,
       &:hover {
         color: var(--color-error-light);
         border-color: var(--color-error-light);
@@ -140,6 +148,7 @@ a[role="button"],
     border-color: var(--color-warning);
     color: var(--color-warning-contrast);
 
+    &:focus,
     &:hover {
       background-color: var(--color-warning-light);
       border-color: var(--color-warning-light);
@@ -151,6 +160,7 @@ a[role="button"],
       color: var(--color-warning);
       border-color: var(--color-warning);
 
+      &:focus,
       &:hover {
         color: var(--color-warning-light);
         border-color: var(--color-warning-light);
@@ -163,6 +173,7 @@ a[role="button"],
     border-color: var(--color-neutral-1);
     color: var(--color-text-primary);
 
+    &:focus,
     &:hover {
       background-color: var(--color-neutral-2);
       border-color: var(--color-neutral-2);
@@ -174,6 +185,7 @@ a[role="button"],
       color: var(--color-neutral-4);
       border-color: var(--color-neutral-4);
 
+      &:focus,
       &:hover {
         color: var(--color-neutral-2);
         border-color: var(--color-neutral-2);
@@ -186,6 +198,7 @@ a[role="button"],
     border-color: var(--color-neutral-10);
     color: var(--color-neutral-1);
 
+    &:focus,
     &:hover {
       background-color: var(--color-neutral-8);
       border-color: var(--color-neutral-8);
@@ -197,6 +210,7 @@ a[role="button"],
       color: var(--color-neutral-10);
       border-color: var(--color-neutral-10);
 
+      &:focus,
       &:hover {
         color: var(--color-neutral-6);
         border-color: var(--color-neutral-6);
@@ -210,6 +224,7 @@ a[role="button"],
     border-color: transparent;
     color: var(--color-action);
 
+    &:focus,
     &:hover {
       color: var(--color-action-light);
       border-color: transparent;
