@@ -1,0 +1,243 @@
+/*
+ * ── Reset ──
+ *
+ * Minimal modern reset inspired by dbushell/patchwork.
+ * Uses :where() for zero specificity — easy to override.
+ * Includes inlined normalize-opentype.css for OpenType features.
+ *
+ * Key features:
+ *   - interpolate-size: allow-keywords (animate to/from auto heights)
+ *   - hanging-punctuation for refined typography
+ *   - text-wrap: balance on headings, pretty on paragraphs
+ *   - field-sizing: content for textareas without rows
+ *   - prefers-reduced-motion kills all animation/transitions
+ *   - scrollbar-gutter: stable prevents layout shift
+ */
+
+
+/* ── Box Model ── */
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* ── Document ── */
+
+:where(html) {
+  color-scheme: light dark;
+  font-optical-sizing: auto;
+  hanging-punctuation: first allow-end last;
+  interpolate-size: allow-keywords;
+  scroll-behavior: smooth;
+  scrollbar-gutter: stable;
+  text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Respect user motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  :where(html) {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+:where(body) {
+  min-block-size: 100svb;
+  min-inline-size: 300px;
+}
+
+
+/* ── Media ── */
+
+:where(canvas, img, picture, svg, video) {
+  block-size: auto;
+  border: none;
+  display: block;
+  max-inline-size: 100%;
+}
+
+
+/* ── Forms ── */
+
+:where(button, input, progress, select, textarea) {
+  appearance: none;
+  background: transparent;
+  border: none;
+  color: inherit;
+  font: inherit;
+  hanging-punctuation: none;
+  line-height: inherit;
+  text-align: start;
+  touch-action: manipulation;
+}
+
+:where(button) {
+  cursor: pointer;
+  user-select: none;
+}
+
+:where(textarea) {
+  resize: vertical;
+}
+
+/* Auto-size textareas without explicit rows */
+:where(textarea:not([rows])) {
+  field-sizing: content;
+}
+
+:where(fieldset, iframe) {
+  border: none;
+}
+
+
+/* ── Text ── */
+
+:where(p, li, h1, h2, h3, h4, h5, h6) {
+  overflow-wrap: break-word;
+}
+
+/* Balance short heading lines */
+:where(h1, h2, h3) {
+  text-wrap: balance;
+}
+
+/* Prevent orphans in paragraph text */
+:where(p) {
+  text-wrap: pretty;
+}
+
+:where(abbr[title]) {
+  border: none;
+  text-decoration: none;
+}
+
+:where(cite) {
+  font-style: inherit;
+}
+
+:where(li, ol, ul) {
+  list-style: none;
+}
+
+
+/* ── Popover / Dialog ── */
+
+:where(dialog, [popover]) {
+  background: transparent;
+  border: none;
+  color: inherit;
+  margin: auto;
+  max-block-size: none;
+  max-inline-size: none;
+  position: fixed;
+}
+
+:where([popover]) {
+  inset: auto;
+}
+
+:where(dialog:not([open], [popover]), [popover]:not(:popover-open)) {
+  display: none;
+}
+
+:where([hidden]:not([hidden="until-found"])) {
+  display: none !important;
+}
+
+
+/* ── Disabled ── */
+
+:where(:disabled) {
+  cursor: not-allowed;
+}
+
+
+/* ── Accessibility ── */
+
+/* Increase border/outline weight for high contrast preference */
+@media (prefers-contrast: more) {
+  :root {
+    --border-width: 2px;
+    --focus-outline-width: 3px;
+  }
+}
+
+/* Windows High Contrast Mode — use system colors */
+@media (forced-colors: active) {
+  button {
+    border: 1px solid ButtonText;
+  }
+
+  a {
+    color: LinkText;
+  }
+}
+
+
+/* ── OpenType Normalization ──
+ *
+ * Inlined from normalize-opentype.css v0.2.4
+ * Adds kerning, ligatures, and numeral features.
+ * These only activate if the loaded font supports them.
+ */
+
+html, body, table {
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0;
+  font-kerning: normal;
+}
+
+/* Discretionary ligatures on large headings */
+h1, h2, h3 {
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 1;
+}
+
+/* Small capitals for abbreviations */
+abbr {
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "smcp" 1, "c2sc" 1;
+}
+
+/* Tabular numerals and slashed zero in code */
+code, kbd, pre, samp {
+  font-feature-settings: "kern" 0, "liga" 0, "calt" 1, "dlig" 0, "pnum" 0, "tnum" 1, "onum" 0, "lnum" 1, "zero" 1;
+}
+
+/* Proper superscript/subscript numerals */
+sup {
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "sups" 1;
+}
+
+sub {
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "subs" 1;
+}
+
+/* Lining numerals in numeric inputs */
+input[type="color"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="number"],
+input[type="range"],
+input[type="tel"],
+input[type="time"] {
+  font-feature-settings: "kern" 0, "liga" 1, "calt" 1, "pnum" 1, "tnum" 0, "onum" 0, "lnum" 1;
+}
+
+/* Tabular numerals in table bodies and captions */
+tbody, caption {
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "pnum" 0, "tnum" 1, "onum" 0, "lnum" 1, "zero" 1;
+}

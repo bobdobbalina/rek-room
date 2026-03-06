@@ -1,0 +1,37 @@
+/*
+ * ── Tables ──
+ *
+ * Clean, readable table styles with token-based spacing.
+ * Uses logical properties for RTL support.
+ */
+
+table {
+  border-collapse: collapse;
+  margin-block: var(--spacing-base);
+  table-layout: fixed;
+  text-align: start;
+  inline-size: 100%;
+}
+
+thead {
+  line-height: var(--line-height-heading);
+  vertical-align: bottom;
+}
+
+tbody {
+  vertical-align: top;
+}
+
+tr {
+  border-block-end: var(--border);
+}
+
+th {
+  font-weight: var(--font-weight-semi-bold);
+}
+
+th,
+td {
+  padding-block: var(--spacing-sm);
+  padding-inline-end: var(--spacing-sm);
+}

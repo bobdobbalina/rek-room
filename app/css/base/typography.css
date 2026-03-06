@@ -1,0 +1,192 @@
+/*
+ * ── Typography ──
+ *
+ * Base text styles for the document. Headings are styled both by
+ * element (h1–h6) and by class (.h1–.h6) so you can use semantic
+ * elements with visual overrides:
+ *   <h2 class="h4">Visually smaller heading</h2>
+ *
+ * Font sizes come from the pow()-based type scale in tokens/core.css.
+ * Change --type-ratio to adjust the entire scale at once.
+ *
+ * Features:
+ *   - text-box trimming on headings (removes leading/trailing whitespace)
+ *   - lh units for vertical rhythm spacing
+ *   - text-underline-offset on links for refined underlines
+ *   - ::selection adapts to light/dark via light-dark()
+ */
+
+
+/* ── Document Defaults ── */
+
+html {
+  accent-color: var(--color-action);
+  caret-color: var(--color-action);
+  color: var(--color-text-primary);
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-text);
+}
+
+
+/* ── Selection ── */
+
+::selection {
+  background-color: var(--color-action);
+  color: var(--color-action-contrast);
+}
+
+
+/* ── Headings ──
+ * Shared base styles for all heading levels.
+ * text-box trims whitespace above cap height and below alphabetic baseline,
+ * giving headings tighter, more predictable spacing.
+ */
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: var(--font-family-heading);
+  line-height: var(--line-height-heading);
+  margin-block-end: 0.5lh;
+  text-box: trim-both cap alphabetic;
+}
+
+/* Size assignments — element and class selectors */
+h1, .h1 {
+  font-size: var(--font-size-h1);
+}
+
+h2, .h2 {
+  font-size: var(--font-size-h2);
+}
+
+h3, .h3 {
+  font-size: var(--font-size-h3);
+}
+
+h4, .h4 {
+  font-size: var(--font-size-h4);
+}
+
+h5, .h5 {
+  font-size: var(--font-size-h5);
+}
+
+h6, .h6 {
+  font-size: var(--font-size-h6);
+}
+
+/* Display size for hero/splash headings */
+.display {
+  font-size: var(--font-size-display);
+}
+
+
+/* ── Body Text ── */
+
+p {
+  margin-block-end: 1lh;
+}
+
+.p {
+  margin-block-end: 1lh;
+}
+
+
+/* ── Links ──
+ * Uses :focus-visible only (no plain :focus) for keyboard-only outlines.
+ * text-underline-offset adds space between text and underline.
+ */
+
+[href] {
+  color: var(--color-action);
+  text-decoration-skip-ink: auto;
+  text-underline-offset: 0.15em;
+  transition: color var(--animation-duration) var(--animation-timing);
+
+  @media (hover: hover) {
+    &:hover {
+      color: var(--color-action-light);
+    }
+  }
+
+  &:focus-visible {
+    outline: var(--focus-outline);
+    outline-offset: var(--focus-outline-offset);
+  }
+}
+
+
+/* ── Horizontal Rule ── */
+
+hr {
+  border-block-end: var(--border);
+  border-block-start: 0;
+  border-inline: 0;
+  margin-block: var(--spacing-base);
+}
+
+
+/* ── Pre / Code ── */
+
+pre {
+  background-color: light-dark(var(--color-neutral-1), var(--color-neutral-9));
+  border-radius: var(--border-radius);
+  font-size: 0.875em;
+  margin-block-end: var(--spacing-sm);
+  max-inline-size: 100%;
+  padding: var(--spacing-sm) var(--spacing-sm);
+  overflow-x: auto;
+}
+
+code, kbd, samp {
+  font-family: var(--font-tertiary-stack);
+}
+
+/* Inline code */
+:not(pre)>code {
+  background-color: light-dark(var(--color-neutral-1), var(--color-neutral-8));
+  border-radius: calc(var(--border-radius) / 2);
+  padding-block: 0.125em;
+  padding-inline: 0.125em;
+}
+
+
+/* ── Blockquote ── */
+
+blockquote,
+.blockquote {
+  border-inline-start: 0.3rem solid var(--border-color);
+  font-style: italic;
+  margin-block: var(--spacing-base);
+  padding-block: var(--spacing-sm);
+  padding-inline-start: var(--spacing-base);
+
+  /* Citation */
+  & footer,
+  & .cite {
+    display: block;
+    font-size: 85%;
+
+    &::before {
+      content: "\2014\00A0";
+    }
+  }
+}
+
+
+/* ── Small ── */
+
+small {
+  font-size: var(--font-size-body-sm);
+}
+
+
+/* ── Mark ── */
+
+mark {
+  background-color: light-dark(oklch(from var(--color-warning) calc(l + 0.15) c h),
+      oklch(from var(--color-warning) calc(l - 0.1) c h));
+  color: var(--color-text-primary);
+  padding-inline: 0.125em;
+}

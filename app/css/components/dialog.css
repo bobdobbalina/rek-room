@@ -1,0 +1,82 @@
+/*
+ * ── Dialog ──
+ *
+ * Native <dialog> styling with backdrop, entry/exit animations,
+ * and surface/elevation tokens.
+ *
+ * HTML usage:
+ *   <dialog id="my-dialog">
+ *     <h2>Dialog Title</h2>
+ *     <p>Content here.</p>
+ *     <button onclick="this.closest('dialog').close()">Close</button>
+ *   </dialog>
+ *
+ * Open with JS:
+ *   document.getElementById('my-dialog').showModal()
+ *
+ * Features:
+ *   - @starting-style for smooth open animation
+ *   - Transition on close (via allow-discrete)
+ *   - Backdrop with blur and dim
+ *   - Uses surface/elevation tokens for theme awareness
+ */
+
+dialog {
+  background-color: var(--color-surface);
+  border: var(--border);
+  border-radius: var(--border-radius);
+  box-shadow: var(--elevation-4);
+  color: var(--color-text-body);
+  max-inline-size: min(90vw, 40rem);
+  padding: var(--spacing-lg);
+
+  /* Smooth open/close transitions */
+  opacity: 1;
+  scale: 1;
+  transition:
+    opacity var(--animation-duration) var(--animation-timing),
+    scale var(--animation-duration) var(--animation-timing),
+    overlay var(--animation-duration) var(--animation-timing) allow-discrete,
+    display var(--animation-duration) var(--animation-timing) allow-discrete;
+
+  /* Entry animation — start from this state when opening */
+  @starting-style {
+    opacity: 0;
+    scale: 0.95;
+  }
+
+  /* Closed state — animate to this when closing */
+  &:not([open]) {
+    opacity: 0;
+    scale: 0.95;
+  }
+
+  /* Backdrop — the overlay behind the dialog */
+  &::backdrop {
+    background-color: rgb(0 0 0 / 0.5);
+    backdrop-filter: blur(4px);
+
+    opacity: 1;
+    transition:
+      opacity var(--animation-duration) var(--animation-timing),
+      overlay var(--animation-duration) var(--animation-timing) allow-discrete,
+      display var(--animation-duration) var(--animation-timing) allow-discrete;
+
+    @starting-style {
+      opacity: 0;
+    }
+  }
+
+  &:not([open])::backdrop {
+    opacity: 0;
+  }
+
+  /* Typography within the dialog */
+  & h2, & h3, & h4 {
+    margin-block-end: var(--spacing-sm);
+  }
+
+  & p {
+    margin-block-end: var(--spacing-md);
+  }
+}

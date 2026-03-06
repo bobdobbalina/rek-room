@@ -1,0 +1,58 @@
+/*
+ * ── rek-room ──
+ *
+ * Zero-dependency CSS starting point for styling HTML primitives
+ * and simple components to match a brand aesthetic.
+ *
+ * Architecture:
+ *   @layer reset       → Minimal reset + OpenType normalization
+ *   @layer tokens      → Design tokens (colors, typography, spacing, motion)
+ *   @layer base        → HTML primitive styling (headings, links, lists, tables)
+ *   @layer components  → Interactive elements (buttons, forms, select, toggle, dialog)
+ *   @layer utilities   → Helpers (sr-only, print styles)
+ *
+ * Overriding:
+ *   Any CSS written without @layer automatically wins over all system styles.
+ *   No !important needed. Just write normal CSS:
+ *     :root { --color-primary: #ff6600; }
+ *     button { background-color: tomato; }
+ *
+ * Breakpoint tokens (resolved at build time by Lightning CSS):
+ *   @media (--sm)  → 640px+    @media (--lg)  → 1024px+
+ *   @media (--md)  → 768px+    @media (--xl)  → 1280px+
+ *                               @media (--2xl) → 1536px+
+ */
+
+@layer reset, tokens, base, components, utilities;
+
+/* ── Reset ── */
+@import "reset.css" layer(reset);
+
+/* ── Tokens ── */
+@import "tokens/core.css" layer(tokens);
+@import "tokens/fonts.css" layer(tokens);
+@import "tokens/breakpoints.css" layer(tokens);
+
+/* ── Base ── */
+@import "base/typography.css" layer(base);
+@import "base/layout.css" layer(base);
+@import "base/media.css" layer(base);
+@import "base/lists.css" layer(base);
+@import "base/tables.css" layer(base);
+
+/* ── Components ── */
+@import "components/buttons.css" layer(components);
+@import "components/forms.css" layer(components);
+@import "components/select.css" layer(components);
+@import "components/toggle.css" layer(components);
+@import "components/scrollbars.css" layer(components);
+@import "components/dialog.css" layer(components);
+@import "components/details.css" layer(components);
+@import "components/progress.css" layer(components);
+@import "components/popover.css" layer(components);
+
+/* ── Utilities ── */
+@import "utilities.css" layer(utilities);
+
+/* ── Theme Toggle (unlayered — always wins) ── */
+@import "theme-toggle.css";

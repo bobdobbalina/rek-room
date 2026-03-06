@@ -1,0 +1,124 @@
+/*
+ * ── Select ──
+ *
+ * Two-tier approach for <select> styling:
+ *
+ *   1. Base styles: work everywhere with a custom SVG arrow
+ *   2. @supports (appearance: base-select): full customization with
+ *      native dropdown, checkmarks, and entry/exit animations
+ *
+ * No wrapper elements needed — works directly on <select>.
+ *
+ * Override example:
+ *   select { --_select-bg: var(--color-surface-raised); }
+ */
+
+
+/* ── Base Select ──
+ * Custom arrow via background SVG. Works in all modern browsers. */
+
+select {
+  --_select-bg: transparent;
+  --_select-border: var(--border-color);
+  --_select-arrow: var(--color-text-secondary);
+
+  background-color: var(--_select-bg);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23666' d='M1.41 0L6 4.58 10.59 0 12 1.41l-6 6-6-6z'/%3E%3C/svg%3E");
+  /* stylelint-disable-next-line declaration-property-value-no-unknown -- logical keyword */
+  background-position: inline-end 0.75rem center;
+  background-repeat: no-repeat;
+  background-size: 0.75rem;
+  border: var(--border-width) var(--border-style) var(--_select-border);
+  border-radius: var(--border-radius);
+  display: block;
+  font-family: var(--font-family);
+  font-size: 1rem;
+  inline-size: 100%;
+  margin-block-end: var(--spacing-sm);
+  padding-block: calc(var(--spacing-base) / 3);
+  /* stylelint-disable-next-line declaration-block-no-redundant-longhand-properties -- intentionally different values */
+  padding-inline: calc(var(--spacing-base) / 3) 2.5rem;
+  transition: border-color var(--animation-duration) var(--animation-timing);
+
+  &:focus-visible {
+    outline: var(--focus-outline);
+    outline-offset: var(--focus-outline-offset);
+  }
+}
+
+
+/* ── Modern Select ──
+ * appearance: base-select enables full customization of the dropdown
+ * popup, including option styling, checkmarks, and animations.
+ * Falls back gracefully to the base styles above. */
+
+@supports (appearance: base-select) {
+  select {
+    appearance: base-select;
+    background-image: none;
+    padding-inline-end: calc(var(--spacing-base) / 3);
+    position: relative;
+
+    /* Custom dropdown arrow */
+    &::picker-icon {
+      color: var(--color-text-secondary);
+      transition: rotate var(--animation-duration-fast) var(--animation-timing);
+      position: absolute;
+      inset-inline-end: calc(var(--spacing-base) / 3);
+      inset-block-start: 50%;
+      transform-origin: center;
+      translate: 0 -50%;
+    }
+
+    /* Rotate arrow when open */
+    &:open::picker-icon {
+      rotate: 180deg;
+    }
+
+    /* Dropdown popup */
+    &::picker(select) {
+      background-color: light-dark(var(--color-white), var(--color-neutral-9));
+      border: var(--border);
+      border-radius: var(--border-radius);
+      box-shadow: var(--elevation-3);
+      padding-block: var(--spacing-xs);
+
+      /* Entry animation */
+      opacity: 1;
+      scale: 1;
+      transition:
+        opacity var(--animation-duration-fast) var(--animation-timing),
+        scale var(--animation-duration-fast) var(--animation-timing),
+        display var(--animation-duration-fast) var(--animation-timing) allow-discrete;
+
+      @starting-style {
+        opacity: 0;
+        scale: 0.95;
+      }
+    }
+
+    /* Option styling */
+    & option {
+      padding-block: var(--spacing-xs);
+      padding-inline: var(--spacing-sm);
+      border-radius: calc(var(--border-radius) / 2);
+      transition: background-color var(--animation-duration-fast) var(--animation-timing);
+
+      &:checked {
+        background-color: light-dark(oklch(from var(--color-action) calc(l + 0.2) calc(c * 0.3) h),
+            oklch(from var(--color-action) calc(l - 0.2) calc(c * 0.3) h));
+      }
+
+      @media (hover: hover) {
+        &:hover {
+          background-color: light-dark(var(--color-neutral-1), var(--color-neutral-8));
+        }
+      }
+    }
+
+    /* Checkmark on selected option */
+    & option::checkmark {
+      color: var(--color-action);
+    }
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "extends": "stylelint-config-standard",
+  "rules": {
+    "import-notation": "string",
+    "declaration-empty-line-before": null,
+    "custom-property-empty-line-before": null,
+    "comment-empty-line-before": null,
+    "no-descending-specificity": null,
+
+    "no-invalid-position-at-import-rule": [true, {
+      "ignoreAtRules": ["custom-media", "layer"]
+    }],
+
+    "alpha-value-notation": "number",
+    "color-hex-length": "short",
+
+    "value-keyword-case": ["lower", {
+      "ignoreProperties": ["text-rendering"],
+      "camelCaseSvgKeywords": true
+    }],
+
+    "declaration-property-value-no-unknown": [true, {
+      "ignoreProperties": {
+        "background-position": ["/.*/"]
+      }
+    }],
+
+    "property-no-vendor-prefix": [true, {
+      "ignoreProperties": [
+        "text-size-adjust",
+        "tap-highlight-color",
+        "font-smoothing",
+        "appearance"
+      ]
+    }],
+    "value-no-vendor-prefix": [true, {
+      "ignoreValues": ["textfield"]
+    }],
+    "selector-no-vendor-prefix": true,
+
+    "custom-property-pattern": "^([-a-z0-9]+|_[-a-z0-9]+)$",
+    "custom-media-pattern": "^[a-z0-9-]+$",
+    "selector-class-pattern": "^[a-z][a-z0-9-]*$",
+
+    "at-rule-no-unknown": [true, {
+      "ignoreAtRules": [
+        "custom-media",
+        "starting-style"
+      ]
+    }],
+
+    "function-no-unknown": [true, {
+      "ignoreFunctions": [
+        "light-dark",
+        "oklch",
+        "pow"
+      ]
+    }],
+
+    "font-family-name-quotes": "always-where-recommended"
+  }
+}

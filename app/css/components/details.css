@@ -1,0 +1,107 @@
+/*
+ * ── Details / Summary ──
+ *
+ * Styled <details>/<summary> with smooth open/close animation.
+ * The animation works because reset.css sets
+ * interpolate-size: allow-keywords on :root, allowing the browser
+ * to transition height to/from auto.
+ *
+ * HTML usage:
+ *   <details>
+ *     <summary>Click to expand</summary>
+ *     <p>Hidden content here.</p>
+ *   </details>
+ *
+ * Accordion pattern — stack multiple <details> elements:
+ *   <details name="faq">
+ *     <summary>Question 1</summary>
+ *     <p>Answer 1</p>
+ *   </details>
+ *   <details name="faq">
+ *     <summary>Question 2</summary>
+ *     <p>Answer 2</p>
+ *   </details>
+ */
+
+details {
+  border: var(--border);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  transition: border-color var(--animation-duration) var(--animation-timing);
+  margin-block-end: var(--spacing-xs);
+
+  /* Remove top border on adjacent details for clean stacking */
+  &+details {
+    border-block-start: none;
+    border-start-start-radius: 0;
+    border-start-end-radius: 0;
+    margin-block-end: 0;
+  }
+
+  /* Round only the top of the first in a stack */
+  &:has(+ details) {
+    border-end-start-radius: 0;
+    border-end-end-radius: 0;
+    margin-block-end: 0;
+  }
+
+  &[open] {
+    padding-block-end: var(--spacing-sm);
+  }
+
+  *:last-child {
+    margin-block-end: 0;
+  }
+}
+
+summary {
+  cursor: pointer;
+  font-weight: var(--font-weight-semi-bold);
+  list-style: none;
+  /* padding-block: var(--spacing-xs); */
+  position: relative;
+  user-select: none;
+
+  /* Custom disclosure marker */
+  &::after {
+    content: "";
+    border-block-start: 0.35em solid var(--color-text-secondary);
+    border-inline: 0.25em solid transparent;
+    display: inline-block;
+    inset-inline-end: 0;
+    position: absolute;
+    inset-block-start: 50%;
+    translate: 0 -50%;
+    transition: rotate var(--animation-duration) var(--animation-timing);
+    transform-origin: center;
+  }
+
+  /* Remove default marker */
+  &::-webkit-details-marker {
+    display: none;
+  }
+
+  &::marker {
+    content: "";
+  }
+
+  /* Rotate arrow when open */
+  details[open]>& {
+    margin-block-end: var(--spacing-sm);
+
+    &::after {
+      rotate: 180deg;
+    }
+  }
+
+  &:focus-visible {
+    outline: var(--focus-outline);
+    outline-offset: var(--focus-outline-offset);
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      color: var(--color-action);
+    }
+  }
+}

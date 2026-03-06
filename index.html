@@ -4,23 +4,181 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title></title>
-  <link rel="stylesheet" href="/dist/style.css" />
-  <script defer src="/dist/script.js"></script>
+  <title>rek-room Styleguide</title>
+  <link rel="stylesheet" href="/app/css/style.css" />
+
+  <!-- Styleguide-only presentation styles (not part of rek-room) -->
+  <style>
+    body {
+      max-inline-size: 64rem;
+      margin-inline: auto;
+      padding: 4rem 2rem;
+    }
+
+    /* ── Color Chips ── */
+
+    .chip-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2px;
+      margin-block-end: var(--spacing-md);
+
+      & .color-chip {
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        inline-size: 5.5rem;
+        block-size: 5.5rem;
+        border-radius: calc(var(--border-radius) / 2);
+        font-family: var(--font-tertiary-stack);
+        font-size: 0.7rem;
+        text-align: center;
+
+        & .label {
+          padding: 0.25rem;
+          border-radius: calc(var(--border-radius) / 2);
+          background: light-dark(rgb(255 255 255 / 0.7), rgb(0 0 0 / 0.5));
+          line-height: 1;
+        }
+      }
+
+      /* Brand colors */
+      &.brand .color-chip {
+        &:nth-of-type(1) {
+          background-color: var(--color-primary);
+        }
+
+        &:nth-of-type(2) {
+          background-color: var(--color-secondary);
+        }
+
+        &:nth-of-type(3) {
+          background-color: var(--color-tertiary);
+        }
+      }
+
+      /* Neutral scale */
+      &.neutrals .color-chip {
+        &:nth-of-type(1) {
+          background-color: var(--color-neutral-0);
+        }
+
+        &:nth-of-type(2) {
+          background-color: var(--color-neutral-1);
+        }
+
+        &:nth-of-type(3) {
+          background-color: var(--color-neutral-2);
+        }
+
+        &:nth-of-type(4) {
+          background-color: var(--color-neutral-3);
+        }
+
+        &:nth-of-type(5) {
+          background-color: var(--color-neutral-4);
+        }
+
+        &:nth-of-type(6) {
+          background-color: var(--color-neutral-5);
+          color: var(--color-neutral-1);
+        }
+
+        &:nth-of-type(7) {
+          background-color: var(--color-neutral-6);
+          color: var(--color-neutral-1);
+        }
+
+        &:nth-of-type(8) {
+          background-color: var(--color-neutral-7);
+          color: var(--color-neutral-1);
+        }
+
+        &:nth-of-type(9) {
+          background-color: var(--color-neutral-8);
+          color: var(--color-neutral-1);
+        }
+
+        &:nth-of-type(10) {
+          background-color: var(--color-neutral-9);
+          color: var(--color-neutral-1);
+        }
+
+        &:nth-of-type(11) {
+          background-color: var(--color-neutral-10);
+          color: var(--color-neutral-1);
+        }
+      }
+
+      /* UI / semantic colors */
+      &.ui .color-chip {
+        &:nth-of-type(1) {
+          background-color: var(--color-action);
+        }
+
+        &:nth-of-type(2) {
+          background-color: var(--color-highlight);
+        }
+
+        &:nth-of-type(3) {
+          background-color: var(--color-success);
+        }
+
+        &:nth-of-type(4) {
+          background-color: var(--color-warning);
+        }
+
+        &:nth-of-type(5) {
+          background-color: var(--color-error);
+        }
+      }
+    }
+
+    /* ── Semantic Surface Demo ── */
+
+    .surface-demo {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--spacing-sm);
+      margin-block-end: var(--spacing-md);
+
+      & .swatch {
+        padding: var(--spacing-sm) var(--spacing-md);
+        border-radius: var(--border-radius);
+        border: var(--border);
+        font-family: var(--font-tertiary-stack);
+        font-size: 0.75rem;
+      }
+    }
+  </style>
 </head>
 
-<body style="padding: 4rem;">
-  <!-- Beginning of Styleguide -->
+<body>
 
-  <h1 class="h1">Markup Styleguide</h1>
+  <!-- ════════════════════════════════════════════════════════
+       rek-room Styleguide
+       A visual reference for all styled primitives and components.
+       ════════════════════════════════════════════════════════ -->
 
-  <p>A one stop shop for styling most front-end elements/components</p>
+  <h1>Markup Styleguide</h1>
+  <p>A one stop shop for styling most front-end elements and components.</p>
+
+  <p>
+    <small>Theme:
+      <button type="button" class="sm text" onclick="document.documentElement.removeAttribute('data-theme')">System</button>
+      <button type="button" class="sm text" onclick="document.documentElement.setAttribute('data-theme', 'light')">Light</button>
+      <button type="button" class="sm text" onclick="document.documentElement.setAttribute('data-theme', 'dark')">Dark</button>
+    </small>
+  </p>
 
   <hr />
 
-  <h2 class="h2" id="headings">Colors</h2>
 
-  <h3 class="h3">Brand Colors</h3>
+  <!-- ── Colors ── -->
+
+  <h2 id="colors">Colors</h2>
+
+  <h3>Brand Colors</h3>
   <div class="chip-container brand">
     <div class="color-chip">
       <div class="label">primary</div>
@@ -33,7 +191,7 @@
     </div>
   </div>
 
-  <h3 class="h3">Neutrals</h3>
+  <h3>Neutrals</h3>
   <div class="chip-container neutrals">
     <div class="color-chip">
       <div class="label">white (0%)</div>
@@ -70,7 +228,7 @@
     </div>
   </div>
 
-  <h3 class="h3">UI Colors</h3>
+  <h3>UI Colors</h3>
   <div class="chip-container ui">
     <div class="color-chip">
       <div class="label">action</div>
@@ -89,80 +247,153 @@
     </div>
   </div>
 
-  <hr>
+  <hr />
 
-  <h2 class="h2" id="headings">Headings</h2>
+
+  <!-- ── Headings ── -->
+
+  <h2 id="headings">Headings</h2>
 
   <h2 class="display">Display</h2>
+  <h1>Heading 1</h1>
+  <h2>Heading 2</h2>
+  <h3>Heading 3</h3>
+  <h4>Heading 4</h4>
+  <h5>Heading 5</h5>
+  <h6>Heading 6</h6>
 
-  <h1 class="h1">Heading 1</h1>
-  <h2 class="h2">Heading 2</h2>
-  <h3 class="h3">Heading 3</h3>
-  <h4 class="h4">Heading 4</h4>
-  <h5 class="h5">Heading 5</h5>
-  <h6 class="h6">Heading 6</h6>
-
-  <hr />
-
-  <h1 id="headings-with-text">Headings with Text</h1>
-
-  <h1 class="h1">Heading 1</h1>
-  <p>Lorem ipsum dolor sit amet, adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.</p>
-  <h2 class="h2">Heading 2</h2>
-  <p>Lorem ipsum dolor sit amet, adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.</p>
-  <h3 class="h3">Heading 3</h3>
-  <p>Lorem ipsum dolor sit amet, adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.</p>
-  <h4 class="h4">Heading 4</h4>
-  <p>Lorem ipsum dolor sit amet, adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.</p>
-  <h5 class="h5">Heading 5</h5>
-  <p>Lorem ipsum dolor sit amet, adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.</p>
-  <h6 class="h6">Heading 6</h6>
-  <p>Lorem ipsum dolor sit amet, adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.</p>
+  <h3>Class-Based Overrides</h3>
+  <p>Use <code>.h1</code>&ndash;<code>.h6</code> classes to visually override heading size:</p>
+  <h2 class="h4">h2 element with .h4 class</h2>
+  <span class="h2">span element with .h2 class</span>
 
   <hr />
 
-  <h1 id="text-block">Block Elements</h1>
 
-  <h2 class="h2" id="paragraph">Paragraphs and Images</h2>
+  <!-- ── Headings with Text ── -->
+
+  <h2 id="headings-with-text">Headings with Text</h2>
+
+  <h1>Heading 1</h1>
+  <p>Lorem ipsum dolor sit amet, adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.</p>
+  <h2>Heading 2</h2>
+  <p>Lorem ipsum dolor sit amet, adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.</p>
+  <h3>Heading 3</h3>
+  <p>Lorem ipsum dolor sit amet, adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.</p>
+  <h4>Heading 4</h4>
+  <p>Lorem ipsum dolor sit amet, adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.</p>
+  <h5>Heading 5</h5>
+  <p>Lorem ipsum dolor sit amet, adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.</p>
+  <h6>Heading 6</h6>
+  <p>Lorem ipsum dolor sit amet, adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.</p>
+
+  <hr />
+
+
+  <!-- ── Block Elements ── -->
+
+  <h2 id="text-block">Block Elements</h2>
+
+  <h3 id="paragraph">Paragraphs and Images</h3>
 
   <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem.</p>
   <p>Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor.</p>
 
-  <p><img alt="Placeholder Image and Some Alt Text" src="http://placehold.it/350x150" title="A title element for this placeholder image."></p>
+  <p><img alt="Placeholder Image and Some Alt Text" src="https://placehold.co/350x150" title="A title element for this placeholder image." /></p>
 
   <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem.</p>
 
-  <h2 class="h2">Blockquote</h2>
+  <h3>Blockquote</h3>
 
   <p>This is a standard paragraph. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
 
-  <blockquote class="blockquote">
-    "<strong>This is a blockquote.</strong> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at,
-    tincidunt nec, gravida vehicula, nisl."
-    <cite class="cite">John Doe</cite>
+  <blockquote>
+    <strong>This is a blockquote.</strong> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at,
+    tincidunt nec, gravida vehicula, nisl.
+    <footer class="cite">John Doe</footer>
   </blockquote>
 
   <p>This is a standard paragraph. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
 
-  <h2 class="h2">Figure-Caption</h2>
+  <h3>Figure-Caption</h3>
 
   <figure>
-    <img src="http://placehold.it/350x150" alt="A placeholder figure image." />
+    <img src="https://placehold.co/350x150" alt="A placeholder figure image." />
     <figcaption>The figcaption element example</figcaption>
   </figure>
 
-  <h2 class="h2">Details-Summary</h2>
+  <hr />
 
+
+  <!-- ── Details / Summary ── -->
+
+  <h2 id="details">Details / Summary</h2>
+
+  <p>Individual details element:</p>
   <details>
-    <summary>The summary element example</summary>
-    <p>The details example text. It may be styled differently based on what browser or operating system you are using.</p>
+    <summary>Click to expand</summary>
+    <p>The details element content. This is hidden by default and shown when the summary is clicked.</p>
+  </details>
+
+  <p>Accordion pattern (stacked with <code>name</code> attribute):</p>
+  <details name="faq">
+    <summary>Question 1: What is rek-room?</summary>
+    <p>A zero-dependency CSS starting point for styling HTML primitives and simple components.</p>
+  </details>
+  <details name="faq">
+    <summary>Question 2: Does it require JavaScript?</summary>
+    <p>No. Everything is pure CSS &mdash; no JavaScript required for any component.</p>
+  </details>
+  <details name="faq">
+    <summary>Question 3: How do I customize it?</summary>
+    <p>Override any CSS custom property. Because the system uses <code>@layer</code>, your overrides automatically win.</p>
   </details>
 
   <hr />
 
-  <h1 id="text-elements">Text Elements</h1>
 
-  <p>The <a href="#">a element</a> and <a href="http://example.com" target="_blank">external a element</a> examples</p>
+  <!-- ── Dialog ── -->
+
+  <h2 id="dialog">Dialog</h2>
+
+  <p>Native <code>&lt;dialog&gt;</code> with backdrop blur and entry/exit animations:</p>
+  <button type="button" onclick="document.getElementById('demo-dialog').showModal()">Open Dialog</button>
+
+  <dialog id="demo-dialog">
+    <h3>Dialog Title</h3>
+    <p>This is a native dialog element. It uses <code>@starting-style</code> for smooth open/close animations and <code>::backdrop</code> for the overlay.</p>
+    <button type="button" onclick="this.closest('dialog').close()">Close</button>
+  </dialog>
+
+  <hr />
+
+
+  <!-- ── Popover ── -->
+
+  <h2 id="popover">Popover</h2>
+
+  <p>Native Popover API with <code>@starting-style</code> entry/exit animations:</p>
+
+  <button type="button" popovertarget="demo-popover-auto">Toggle Popover (auto)</button>
+  <button type="button" popovertarget="demo-popover-manual" popovertargetaction="show">Show Manual Popover</button>
+
+  <div id="demo-popover-auto" popover>
+    <p><strong>Auto popover.</strong> Click outside or press <kbd>Esc</kbd> to dismiss. This uses the Popover API with no JavaScript required for show/hide behavior.</p>
+  </div>
+
+  <div id="demo-popover-manual" popover="manual">
+    <p><strong>Manual popover.</strong> Must be explicitly dismissed.</p>
+    <button type="button" popovertarget="demo-popover-manual" popovertargetaction="hide" class="sm">Dismiss</button>
+  </div>
+
+  <hr />
+
+
+  <!-- ── Text Elements ── -->
+
+  <h2 id="text-elements">Text Elements</h2>
+
+  <p>The <a href="#">a element</a> and <a href="https://example.com" target="_blank">external a element</a> examples</p>
   <p>The <abbr>abbr element</abbr> and an <abbr title="Abbreviation">abbr</abbr> element with title examples</p>
   <p>The <b>b element</b> example</p>
   <p>The <cite>cite element</cite> example</p>
@@ -186,27 +417,36 @@
   <p>The <sup>sup element</sup> example</p>
   <p>The <time datetime="2005-05-15 19:00">time element</time> example</p>
   <p>The <u>u element</u> example</p>
-  <p>The <var>var element</var> example</p>`
+  <p>The <var>var element</var> example</p>
 
   <hr />
 
-  <h1 id="monospace">Monospace / Preformatted</h1>
-  <p>Code block wrapped in "pre" and "code" tags</p>
+
+  <!-- ── Monospace / Preformatted ── -->
+
+  <h2 id="monospace">Monospace / Preformatted</h2>
+
+  <p>Code block wrapped in <code>pre</code> and <code>code</code> tags:</p>
   <pre><code>// Loop through Divs using Javascript.
-		var divs = document.querySelectorAll('div'), i;
-		
-		for (i = 0; i < divs.length; ++i) {
-		  divs[i].style.color = "green";
-		}</code></pre>
-  <p>Monospace Text wrapped in "pre" tags</p>
-  <pre><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.</p></pre>
+var divs = document.querySelectorAll('div'), i;
+
+for (i = 0; i &lt; divs.length; ++i) {
+  divs[i].style.color = "green";
+}</code></pre>
+
+  <p>Monospace text wrapped in <code>pre</code> tags:</p>
+  <pre>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+Nullam dignissim convallis est. Quisque aliquam.</pre>
 
   <hr />
 
-  <h1 id="list_types">List Types</h1>
 
-  <h2 class="h2">Ordered List (reset)</h2>
-  <ol>
+  <!-- ── List Types ── -->
+
+  <h2 id="list-types">List Types</h2>
+
+  <h3>Ordered List (reset)</h3>
+  <ol style="margin-bottom: var(--spacing-md);">
     <li>List Item 1</li>
     <li>List Item 2</li>
     <li>List Item 3
@@ -224,8 +464,8 @@
     <li>List Item 4</li>
   </ol>
 
-  <h2 class="h2">Ordered List (formattted)</h2>
-  <ol class="bullets">
+  <h3>Ordered List (formatted)</h3>
+  <ol class="bullets" style="margin-bottom: var(--spacing-md);">
     <li>List Item 1</li>
     <li>List Item 2</li>
     <li>List Item 3
@@ -243,8 +483,8 @@
     <li>List Item 4</li>
   </ol>
 
-  <h2 class="h2">Unordered List (reset)</h2>
-  <ul>
+  <h3>Unordered List (reset)</h3>
+  <ul style="margin-bottom: var(--spacing-md);">
     <li>List Item 1</li>
     <li>List Item 2</li>
     <li>List Item 3
@@ -262,8 +502,8 @@
     <li>List Item 4</li>
   </ul>
 
-  <h2 class="h2">Unordered List (formatted)</h2>
-  <ul class="bullets">
+  <h3>Unordered List (formatted)</h3>
+  <ul class="bullets" style="margin-bottom: var(--spacing-md);">
     <li>List Item 1</li>
     <li>List Item 2</li>
     <li>List Item 3
@@ -281,7 +521,7 @@
     <li>List Item 4</li>
   </ul>
 
-  <h2 class="h2">Definition List</h2>
+  <h3>Definition List</h3>
   <dl>
     <dt>Definition Term 1</dt>
     <dd>Definition Description 1</dd>
@@ -291,9 +531,12 @@
 
   <hr />
 
-  <h1 id="tables">Tables</h1>
 
-  <table cellspacing="0" cellpadding="0">
+  <!-- ── Tables ── -->
+
+  <h2 id="tables">Tables</h2>
+
+  <table>
     <caption>This is a table caption</caption>
     <thead>
       <tr>
@@ -308,7 +551,7 @@
         <td>Division 2</td>
         <td>Division 3</td>
       </tr>
-      <tr class="even">
+      <tr>
         <td>Division 1</td>
         <td>Division 2</td>
         <td>Division 3</td>
@@ -333,42 +576,68 @@
 
   <hr />
 
-  <h1 id="form_elements">Media and Form Elements</h1>
 
-  <p>This last section contains elements that don't render well in markdown. Please consult the final section in <a href="https://github.com/bryanbraun/poor-mans-styleguide/blob/gh-pages/index.html">index.html</a>, to see the rest of the
-    styleguide.
-  </p>
+  <!-- ── Progress & Meter ── -->
 
-  <h2 class="h2">Media</h2>
+  <h2 id="progress-meter">Progress &amp; Meter</h2>
 
-  <h3 class="h3">The Audio Element:</h3>
+  <div class="form-group">
+    <label for="progress-demo">Progress (65%):</label>
+    <progress id="progress-demo" value="65" max="100">65%</progress>
+  </div>
+
+  <div class="form-group">
+    <label for="progress-indeterminate">Indeterminate Progress:</label>
+    <progress id="progress-indeterminate">Loading...</progress>
+  </div>
+
+  <div class="form-group">
+    <label for="meter-optimum">Meter (optimum range):</label>
+    <meter id="meter-optimum" min="0" max="100" low="30" high="70" optimum="80" value="75">75%</meter>
+  </div>
+
+  <div class="form-group">
+    <label for="meter-suboptimum">Meter (suboptimum range):</label>
+    <meter id="meter-suboptimum" min="0" max="100" low="30" high="70" optimum="80" value="50">50%</meter>
+  </div>
+
+  <div class="form-group">
+    <label for="meter-low">Meter (low range):</label>
+    <meter id="meter-low" min="0" max="100" low="30" high="70" optimum="80" value="15">15%</meter>
+  </div>
+
+  <hr />
+
+
+  <!-- ── Media ── -->
+
+  <h2 id="media">Media</h2>
+
+  <h3>The Audio Element:</h3>
   <audio controls>
-    <source src="http://www.w3schools.com/tags/horse.ogg" type="audio/ogg" />
-    <source src="http://www.w3schools.com/tags/horse.mp3" type="audio/mpeg" />
+    <source src="https://www.w3schools.com/tags/horse.ogg" type="audio/ogg" />
+    <source src="https://www.w3schools.com/tags/horse.mp3" type="audio/mpeg" />
     Your browser does not support the audio element.
   </audio>
 
-  <h3 class="h3">The Video Element:</h3>
+  <h3>The Video Element:</h3>
   <video width="320" height="240" controls>
-    <source src="http://www.w3schools.com/tags/movie.mp4" type="video/mp4" />
-    <source src="http://www.w3schools.com/tags/movie.ogg" type="video/ogg" />
+    <source src="https://www.w3schools.com/tags/movie.mp4" type="video/mp4" />
+    <source src="https://www.w3schools.com/tags/movie.ogg" type="video/ogg" />
     Your browser does not support the video tag.
   </video>
 
-  <h3 class="h3">Embedded content:</h3>
+  <hr />
 
-  <p>YouTube video (iframe):</p>
 
-  <iframe width="560" height="315" src="http://www.youtube.com/embed/l4f9QF0SGuQ" frameborder="0" allowfullscreen></iframe>
+  <!-- ── Form Elements ── -->
 
-  <h2 class="h2">Form Elements</h2>
+  <h2 id="form-elements">Form Elements</h2>
 
-  <p>The Fieldset:</p>
   <fieldset>
     <legend>Legend</legend>
-    <p>The Form:</p>
-    <form>
 
+    <form>
       <div class="form-group">
         <label for="text_field">Text Field:</label>
         <input type="text" id="text_field" />
@@ -385,6 +654,16 @@
       </div>
 
       <div class="form-group">
+        <label for="text_field_required">Required Text Field:</label>
+        <input type="text" id="text_field_required" required placeholder="This field is required" />
+      </div>
+
+      <div class="form-group">
+        <label for="email_field">Email (with validation):</label>
+        <input type="email" id="email_field" placeholder="email@example.com" />
+      </div>
+
+      <div class="form-group">
         <label for="text_area1">Text Area:</label>
         <textarea id="text_area1"></textarea>
       </div>
@@ -395,8 +674,8 @@
       </div>
 
       <div class="form-group">
-        <label for="text_area">Readonly Text Area:</label>
-        <textarea id="text_area" readonly>I'm readonly</textarea>
+        <label for="text_area_readonly">Readonly Text Area:</label>
+        <textarea id="text_area_readonly" readonly>I'm readonly</textarea>
       </div>
 
       <div class="form-group">
@@ -432,64 +711,47 @@
         </select>
       </div>
 
+      <!-- Radio Buttons -->
       <div class="form-group">
-        <h3 class="h3">Radio Buttons:</h3>
+        <h4>Radio Buttons:</h4>
         <ul>
           <li>
-            <label for="radio_1">
-              <input type="radio" class="radio" name="radio_button" value="radio_1" />Radio 1
-            </label>
+            <label><input type="radio" name="radio_button" value="radio_1" /> Radio 1</label>
           </li>
           <li>
-            <label for="radio_2">
-              <input type="radio" class="radio" name="radio_button" value="radio_2" />Radio 2
-            </label>
+            <label><input type="radio" name="radio_button" value="radio_2" /> Radio 2</label>
           </li>
           <li>
-            <label for="radio_3">
-              <input type="radio" class="radio" name="radio_button" value="radio_3" />Radio 3
-            </label>
+            <label><input type="radio" name="radio_button" value="radio_3" /> Radio 3</label>
           </li>
           <li>
-            <label for="radio_4">
-              <input type="radio" class="radio" name="radio_button" value="radio_4" disabled />Radio 4
-            </label>
+            <label><input type="radio" name="radio_button" value="radio_4" disabled /> Radio 4 (disabled)</label>
           </li>
         </ul>
       </div>
 
+      <!-- Checkboxes -->
       <div class="form-group">
-
-        <h3 class="h3">Checkboxes:</h3>
-
+        <h4>Checkboxes:</h4>
         <ul>
           <li>
-            <label for="check_1">
-              <input type="checkbox" class="checkbox" name="checkboxes" value="check_1" />Checkbox 1
-            </label>
+            <label><input type="checkbox" name="checkboxes" value="check_1" /> Checkbox 1</label>
           </li>
           <li>
-            <label for="check_2">
-              <input type="checkbox" class="checkbox" name="checkboxes" value="check_2" />Checkbox 2
-            </label>
+            <label><input type="checkbox" name="checkboxes" value="check_2" /> Checkbox 2</label>
           </li>
           <li>
-            <label for="check_3">
-              <input type="checkbox" class="checkbox" name="checkboxes" value="check_3" />Checkbox 3
-            </label>
+            <label><input type="checkbox" name="checkboxes" value="check_3" /> Checkbox 3</label>
           </li>
           <li>
-            <label for="check_4">
-              <input type="checkbox" class="checkbox" name="checkboxes" value="check_4" disabled />Checkbox 4
-            </label>
+            <label><input type="checkbox" name="checkboxes" value="check_4" disabled /> Checkbox 4 (disabled)</label>
           </li>
         </ul>
       </div>
 
+      <!-- Toggles -->
       <div class="form-group">
-
-        <h3 class="h3">Toggles:</h3>
-
+        <h4>Toggles:</h4>
         <ul>
           <li>
             <div class="form-group">
@@ -509,43 +771,21 @@
               </div>
             </div>
           </li>
-          <li>
-            <div class="form-group">
-              <div class="toggle-label">Toggle label</div>
-              <div class="toggle">
-                <input type="checkbox" id="switch-3" />
-                <label for="switch-3">Toggle</label>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="form-group">
-              <div class="toggle-label">Toggle label</div>
-              <div class="toggle">
-                <input type="checkbox" id="switch-4" />
-                <label for="switch-4">Toggle</label>
-              </div>
-            </div>
-          </li>
         </ul>
       </div>
 
       <div class="form-group">
         <label for="password">Password:</label>
-        <input type="password" class="password" id="password" />
+        <input type="password" id="password" />
       </div>
 
       <div class="form-group">
         <label for="file">File Input:</label>
-        <input type="file" class="file" id="file" />
+        <input type="file" id="file" />
       </div>
 
-      <h3 class="h3">HTML5-specific Form Elements</h3>
-
-      <div class="form-group">
-        <label for="email">Email:</label>
-        <input type="email" id="email" placeholder="email@example.com" />
-      </div>
+      <!-- HTML5 Form Elements -->
+      <h3>HTML5-specific Form Elements</h3>
 
       <div class="form-group">
         <label for="url">URL:</label>
@@ -584,13 +824,12 @@
 
       <div class="form-group">
         <label for="datalist">Datalist:</label>
-        <input list="browsers" name="browser" type="datalist" id="datalist" />
+        <input list="browsers" name="browser" id="datalist" />
         <datalist id="browsers">
-          <option value="Internet Explorer" />
           <option value="Firefox" />
           <option value="Chrome" />
-          <option value="Opera" />
           <option value="Safari" />
+          <option value="Edge" />
         </datalist>
       </div>
 
@@ -604,29 +843,24 @@
         <output name="result" id="output">42</output>
       </div>
 
-      <div class="form-group">
-        <label for="progress">Progress:</label>
-        <progress id="progress" value="65" max="100"></progress>
-      </div>
+      <!-- Buttons -->
+      <hr />
+
+      <h3>Buttons</h3>
 
       <div class="form-group">
-        <label for="meter">Meter:</label>
-        <meter id="meter" min="200" max="500" value="350">350 degrees</meter>
-      </div>
-
-      <div class="form-group">
-        <h4 class="h4">HTML Elements</h4>
-        <button>Button</button>
-        <input type="button" value="Input">
-        <input type="submit" value="Submit">
-        <input type="reset" value="Reset">
+        <h4>HTML Elements</h4>
+        <button type="button">Button</button>
+        <input type="button" value="Input" />
+        <input type="submit" value="Submit" />
+        <input type="reset" value="Reset" />
         <a href="#" role="button">a[role="button"]</a>
-        <button class="text">button.text || button.link</button>
+        <button type="button" class="text">button.text</button>
       </div>
 
       <div class="form-group">
-        <h4 class="h4">Varients</h4>
-        <button type="button" class="primary">Primary</button>
+        <h4>Variants</h4>
+        <button type="button">Primary (default)</button>
         <button type="button" class="secondary">Secondary</button>
         <button type="button" class="success">Success</button>
         <button type="button" class="error">Error</button>
@@ -636,8 +870,8 @@
       </div>
 
       <div class="form-group">
-        <h4 class="h4">Outlines</h4>
-        <button type="button" class="outline primary">Primary</button>
+        <h4>Outlines</h4>
+        <button type="button" class="outline">Primary Outline</button>
         <button type="button" class="outline secondary">Secondary</button>
         <button type="button" class="outline success">Success</button>
         <button type="button" class="outline error">Error</button>
@@ -647,15 +881,20 @@
       </div>
 
       <div class="form-group">
-        <h4 class="h4">Sizes</h4>
-        <button class="sm">Small</button>
-        <button class="md">Medium (Default)</button>
-        <button class="lg">Large</button>
+        <h4>Sizes</h4>
+        <button type="button" class="sm">Small</button>
+        <button type="button">Medium (Default)</button>
+        <button type="button" class="lg">Large</button>
       </div>
+
+      <div class="form-group">
+        <h4>States</h4>
+        <button type="button">Normal</button>
+        <button type="button" disabled>Disabled</button>
+      </div>
+
     </form>
   </fieldset>
-
-  <!-- End of Styleguide -->
 
 </body>
 

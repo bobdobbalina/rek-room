@@ -1,0 +1,70 @@
+/*
+ * ── Custom Fonts ──
+ *
+ * Define @font-face declarations here for custom typefaces.
+ * The font stacks in tokens/core.css reference these families.
+ *
+ * Usage:
+ *   1. Add your font files to a /fonts directory
+ *   2. Uncomment and edit the @font-face blocks below
+ *   3. Update --font-primary-stack, --font-secondary-stack,
+ *      or --font-tertiary-stack in tokens/core.css
+ *
+ * System Font Stacks (defaults in core.css):
+ *   --font-primary-stack:   ui-serif      → OS default serif
+ *   --font-secondary-stack: system-ui     → OS default sans-serif
+ *   --font-tertiary-stack:  ui-monospace  → OS default monospace
+ */
+
+
+/* ── @font-face Templates ──
+ *
+ * Uncomment and customize for your project's typefaces.
+ * Use font-display: swap for text visibility during load.
+ * Include size-adjust for metric compatibility if needed.
+ *
+ * After adding fonts, update core.css:
+ *   --font-secondary-stack: "Brand Sans", system-ui, sans-serif;
+ */
+
+/*
+@font-face {
+  font-family: "Brand Sans";
+  src: url("/fonts/brand-sans-regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Brand Sans";
+  src: url("/fonts/brand-sans-bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Brand Sans";
+  src: url("/fonts/brand-sans-italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Brand Serif";
+  src: url("/fonts/brand-serif-regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Brand Mono";
+  src: url("/fonts/brand-mono-regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+*/
