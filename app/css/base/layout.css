@@ -1,0 +1,17 @@
+/*
+ * ── Layout Foundations ──
+ *
+ * Minimal html/body styling. This layer does NOT provide layout utilities —
+ * rek-room styles everything but layout. You bring the layout system
+ * (grid, flexbox, etc.) in your own CSS.
+ *
+ * Uses logical properties for RTL support.
+ */
+
+html {
+  background-color: var(--color-viewport-background);
+}
+
+body {
+  text-rendering: optimizespeed;
+}

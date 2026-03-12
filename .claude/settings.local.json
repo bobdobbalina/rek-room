@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:nerdy.dev)",
+      "WebFetch(domain:wearerequired.github.io)",
+      "WebFetch(domain:web.dev)",
+      "WebFetch(domain:baseline.is)",
+      "WebFetch(domain:open-props-ui.netlify.app)",
+      "WebFetch(domain:modern-css.com)",
+      "WebFetch(domain:git.dbushell.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(npm install)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(export NVM_DIR=\"$HOME/.nvm\")",
+      "Bash([ -s \"$NVM_DIR/nvm.sh\" ])",
+      "Bash(. \"$NVM_DIR/nvm.sh\")",
+      "Bash(lsof -ti:5173 -ti:5174)",
+      "Bash(xargs kill -9)",
+      "Bash(npm run build)",
+      "Bash(npm run lint)",
+      "Bash(npm run lint:fix)"
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+/*
+ * ── Lists ──
+ *
+ * Lists are reset to no bullets/numbers by default (in reset.css).
+ * Add the .bullets class to restore standard list styling:
+ *   <ul class="bullets">
+ *   <ol class="bullets">
+ *
+ * Uses logical properties for RTL support.
+ */
+
+
+/* ── Formatted Lists ── */
+
+ul.bullets,
+ol.bullets {
+  list-style-type: revert;
+  padding-inline-start: var(--spacing-sm);
+
+  :where(li, ul, ol) {
+    list-style-type: revert;
+  }
+
+  :where(ul, ol) {
+    padding-inline-start: var(--spacing-xs);
+  }
+}
+
+/* ── Definition Lists ── */
+
+dt {
+  font-weight: var(--font-weight-semi-bold);
+}

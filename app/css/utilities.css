@@ -1,0 +1,97 @@
+/*
+ * ── Utilities ──
+ *
+ * Helper classes and cross-cutting styles.
+ *   - .sr-only / .visibility-hidden for screen reader content
+ *   - Print styles for clean printed output
+ *   - content-visibility for rendering performance
+ */
+
+
+/* ── Screen Reader Only ──
+ * Visually hidden but accessible to assistive technology.
+ * Uses clip-path (modern) instead of deprecated clip. */
+
+.sr-only,
+.visibility-hidden {
+  block-size: 1px;
+  border: 0;
+  clip-path: inset(50%);
+  inline-size: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+}
+
+
+/* ── Content Visibility ──
+ * Skips rendering of off-screen sections for performance.
+ * contain-intrinsic-size provides a placeholder height. */
+
+section,
+[data-content-visibility] {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 500px;
+}
+
+
+/* ── Print Styles ──
+ * Clean output for printed pages. */
+
+@media print {
+  *,
+  *::before,
+  *::after {
+    background: transparent !important;
+    box-shadow: none !important;
+    color: #000 !important;
+    text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  /* Show link URLs after the link text */
+  a[href]::after {
+    content: " (" attr(href) ")";
+  }
+
+  /* Don't show URLs for internal/anchor links */
+  a[href^="#"]::after,
+  a[href^="javascript:"]::after {
+    content: "";
+  }
+
+  /* Show abbreviation expansions */
+  abbr[title]::after {
+    content: " (" attr(title) ")";
+  }
+
+  pre {
+    white-space: pre-wrap !important;
+  }
+
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  img {
+    max-width: 100% !important;
+    page-break-inside: avoid;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+
+  @page {
+    margin: 2cm;
+  }
+}

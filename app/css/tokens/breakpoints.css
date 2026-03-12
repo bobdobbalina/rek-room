@@ -1,0 +1,18 @@
+/*
+ * ── Breakpoint Tokens ──
+ *
+ * Named breakpoints using @custom-media.
+ * Lightning CSS resolves these at build time into standard media queries.
+ *
+ * Usage in any CSS file:
+ *   @media (--sm) { ... }
+ *   @media (--lg) { ... }
+ *
+ * Values use rem so they scale with root font-size.
+ */
+
+@custom-media --sm (width >= 40rem);   /* 640px  — small tablets */
+@custom-media --md (width >= 48rem);   /* 768px  — tablets */
+@custom-media --lg (width >= 64rem);   /* 1024px — laptops */
+@custom-media --xl (width >= 80rem);   /* 1280px — desktops */
+@custom-media --2xl (width >= 96rem);  /* 1536px — large screens */

@@ -1,0 +1,89 @@
+/*
+ * ── Toggle Switch ──
+ *
+ * A pure-CSS toggle built from <input type="checkbox"> + <label>.
+ * Uses :has(:checked) instead of sibling combinator hacks.
+ *
+ * HTML structure:
+ *   <div class="toggle">
+ *     <input type="checkbox" id="my-toggle">
+ *     <label for="my-toggle">Toggle label</label>
+ *   </div>
+ *
+ * Override example:
+ *   .toggle { --_toggle-active: var(--color-success); }
+ */
+
+:root {
+  --toggle-width: 44px;
+  --toggle-height: 24px;
+  --toggle-switch-size: 18px;
+  --toggle-spacing: 2px;
+}
+
+.toggle {
+  --_toggle-bg: var(--color-neutral-5);
+  --_toggle-active: var(--color-action);
+  --_toggle-knob: var(--color-white);
+
+  position: relative;
+  block-size: var(--toggle-height);
+
+  /* Hide the checkbox visually but keep it accessible */
+  &>input {
+    block-size: 0;
+    inline-size: 0;
+    margin: 0;
+    position: absolute;
+    visibility: visible;
+  }
+
+  /* Track */
+  &>input+label {
+    background: var(--_toggle-bg);
+    block-size: var(--toggle-height);
+    border: var(--border);
+    border-radius: var(--toggle-height);
+    cursor: pointer;
+    display: block;
+    inline-size: var(--toggle-width);
+    margin: 0;
+    position: relative;
+    text-indent: -9999px;
+
+    /* Knob */
+    &::after {
+      background-color: var(--_toggle-knob);
+      block-size: var(--toggle-switch-size);
+      border-radius: var(--toggle-switch-size);
+      content: "";
+      inline-size: var(--toggle-switch-size);
+      inset-block-start: var(--toggle-spacing);
+      inset-inline-start: var(--toggle-spacing);
+      position: absolute;
+      transition: all 0.3s var(--ease-out-cubic);
+    }
+  }
+
+  /* Checked state — uses :has() for cleaner selector */
+  &:has(:checked)>label {
+    background: var(--_toggle-active);
+
+    &::after {
+      background-color: var(--color-white);
+      inset-inline-start: calc(100% - var(--toggle-spacing));
+      transform: translateX(-100%);
+    }
+  }
+
+  /* Active press — widen the knob slightly */
+  &>input+label:active::after {
+    inline-size: 16px;
+  }
+
+  /* Focus — outline the track when keyboard-navigating */
+  &>input:focus-visible+label {
+    outline: var(--focus-outline);
+    outline-offset: var(--focus-outline-offset);
+  }
+}

@@ -1,0 +1,36 @@
+/*
+ * ── Scrollbars ──
+ *
+ * Standards-based scrollbar styling via scrollbar-width and scrollbar-color,
+ * with WebKit pseudo-element enhancement for finer control.
+ *
+ * scrollbar-width/color are supported in Firefox 64+, Chrome 121+, Safari 18+.
+ * WebKit pseudo-elements provide the fallback with more granular control.
+ */
+
+
+/* ── Standards-Based ──
+ * scrollbar-color: <thumb> <track> */
+
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-action) light-dark(var(--color-neutral-2), var(--color-neutral-8));
+}
+
+
+/* ── WebKit Enhancement ──
+ * Finer control over dimensions and border-radius. */
+
+::-webkit-scrollbar {
+  inline-size: var(--scrollbar-width);
+  block-size: var(--scrollbar-width);
+}
+
+::-webkit-scrollbar-track {
+  background: light-dark(var(--color-neutral-2), var(--color-neutral-8));
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-action);
+  border-radius: var(--scrollbar-width);
+}

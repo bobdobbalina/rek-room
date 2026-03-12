@@ -1,0 +1,59 @@
+/*
+ * ── Popover ──
+ *
+ * Styles for elements using the Popover API ([popover] attribute).
+ * Lighter-weight alternative to <dialog> for tooltips, dropdowns,
+ * and non-modal overlays.
+ *
+ * HTML usage:
+ *   <button popovertarget="my-popover">Toggle</button>
+ *   <div id="my-popover" popover>Popover content</div>
+ *
+ * Popover types:
+ *   popover="auto"    → light-dismiss (click outside or Escape closes it)
+ *   popover="manual"  → must be explicitly closed
+ *
+ * Features:
+ *   - @starting-style for entry animation
+ *   - ::backdrop styling for auto popovers
+ *   - Uses surface/elevation tokens for theme awareness
+ */
+
+[popover] {
+  background-color: var(--color-surface);
+  border: var(--border);
+  border-radius: var(--border-radius);
+  box-shadow: var(--elevation-3);
+  color: var(--color-text-body);
+  max-inline-size: min(90vw, 30rem);
+  padding: var(--spacing-md);
+
+  /* Smooth open/close transitions */
+  opacity: 1;
+  scale: 1;
+  transition:
+    opacity var(--animation-duration-fast) var(--animation-timing),
+    scale var(--animation-duration-fast) var(--animation-timing),
+    overlay var(--animation-duration-fast) var(--animation-timing) allow-discrete,
+    display var(--animation-duration-fast) var(--animation-timing) allow-discrete;
+
+  /* Entry animation */
+  @starting-style {
+    opacity: 0;
+    scale: 0.96;
+  }
+
+  /* Exit state */
+  &:not(:popover-open) {
+    opacity: 0;
+    scale: 0.96;
+  }
+
+  /* Backdrop for auto-dismiss popovers */
+  &::backdrop {
+    background-color: transparent;
+    transition:
+      display var(--animation-duration-fast) allow-discrete,
+      overlay var(--animation-duration-fast) allow-discrete;
+  }
+}

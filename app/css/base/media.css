@@ -1,0 +1,30 @@
+/*
+ * ── Media ──
+ *
+ * Styles for images, pictures, figures, and other embedded content.
+ * The reset already handles max-width and display:block.
+ * This file adds semantic styling.
+ */
+
+figure {
+  margin-block: var(--spacing-base);
+}
+
+figcaption {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-body-sm);
+  margin-block-start: var(--spacing-xs);
+}
+
+img,
+picture,
+svg,
+video {
+  block-size: auto;
+  border: none;
+  border-radius: var(--border-radius);
+  display: block;
+  max-inline-size: 100%;
+  width: 100%;
+  height: auto;
+}

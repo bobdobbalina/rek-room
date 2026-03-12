@@ -1,0 +1,23 @@
+/*
+ * ── Theme Toggle ──
+ *
+ * Override the system color-scheme via a data attribute on <html>.
+ * This file is intentionally NOT in any @layer so it always wins.
+ *
+ * Usage:
+ *   <html data-theme="dark">   → force dark mode
+ *   <html data-theme="light">  → force light mode
+ *   <html>                     → follow system preference (default)
+ *
+ * JavaScript example:
+ *   document.documentElement.setAttribute('data-theme', 'dark');
+ *   document.documentElement.removeAttribute('data-theme');
+ */
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+html[data-theme="light"] {
+  color-scheme: light;
+}

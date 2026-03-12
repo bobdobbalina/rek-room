@@ -1,0 +1,197 @@
+/*
+ * ── Forms ──
+ *
+ * Styles for form elements: inputs, textareas, labels, fieldsets.
+ * Select has its own file (select.css) for the base-select enhancement.
+ *
+ * Features:
+ *   - :user-invalid / :user-valid for JS-free validation feedback
+ *     (only fires after user interaction, not on page load)
+ *   - :has(:required) auto-adds required indicators to fieldset legends
+ *   - form:has(:user-invalid) dims the submit button
+ *   - All logical properties for RTL support
+ *
+ * Override example:
+ *   input { border-color: var(--color-tertiary); }
+ */
+
+
+/* ── Labels ── */
+
+label,
+.toggle-label {
+  display: flex;
+  font-weight: var(--font-weight-semi-bold);
+  margin-block-end: var(--spacing-xs);
+
+
+  &:has([type="checkbox"],
+    [type="radio"]) {
+    line-height: 1;
+  }
+}
+
+
+/* ── Fieldset / Legend ── */
+
+legend {
+  font-weight: var(--font-weight-semi-bold);
+  margin-block-end: var(--spacing-sm);
+}
+
+/* Auto-required indicator — when any child is :required,
+ * the legend gets an asterisk. No JS needed. */
+fieldset:has(:required) legend::after {
+  content: " *";
+  color: var(--color-error);
+}
+
+
+/* ── Text Inputs & Textarea ── */
+
+[type="color"],
+[type="date"],
+[type="datetime"],
+[type="datetime-local"],
+[type="email"],
+[type="month"],
+[type="number"],
+[type="password"],
+[type="search"],
+[type="tel"],
+[type="text"],
+[type="time"],
+[type="url"],
+[type="week"],
+input:not([type]),
+textarea {
+  background-color: transparent;
+  border: var(--border);
+  border-radius: var(--border-radius);
+  display: block;
+  font-family: var(--font-family);
+  font-size: var(--control-font-size);
+  inline-size: 100%;
+  margin-block-end: var(--spacing-sm);
+  padding-inline: var(--control-padding-inline);
+  transition: border-color var(--animation-duration) var(--animation-timing);
+
+  &:not(textarea, [type="color"]) {
+    block-size: var(--control-block-size);
+  }
+
+  &:focus-visible {
+    outline: var(--focus-outline);
+    outline-offset: var(--focus-outline-offset);
+  }
+
+  &:disabled {
+    @media (hover: hover) {
+      &:hover {
+        border: var(--border);
+      }
+    }
+  }
+
+  &::placeholder {
+    color: var(--color-text-secondary);
+    opacity: 0.5;
+  }
+
+  /* ── Validation Feedback ──
+   * :user-invalid/:user-valid only trigger after the user has
+   * interacted with the field — no flash of red on page load. */
+
+  &:user-invalid {
+    border-color: var(--color-error);
+  }
+
+  &:user-valid {
+    border-color: var(--color-success);
+  }
+}
+
+textarea {
+  padding-block: calc(var(--control-padding-inline-sm) * 0.53);
+}
+
+
+/* ── Search Input ── */
+
+[type="search"] {
+  -webkit-appearance: textfield;
+}
+
+
+/* ── Checkbox & Radio ── */
+
+[type="checkbox"],
+[type="radio"] {
+  appearance: auto;
+  display: inline-block;
+  width: 1.1rem;
+  aspect-ratio: 1;
+  margin-inline-end: var(--spacing-xs);
+
+  &:focus-visible {
+    outline: var(--focus-outline);
+    outline-offset: var(--focus-outline-offset);
+  }
+}
+
+
+/* ── File Input ── */
+
+[type="file"] {
+  margin-block-end: var(--spacing-sm);
+  inline-size: 100%;
+
+  &:focus-visible {
+    outline: var(--focus-outline);
+    outline-offset: var(--focus-outline-offset);
+  }
+}
+
+
+/* ── Color Input ── */
+
+[type="color"] {
+  border: none;
+  border-radius: var(--border-radius);
+  inline-size: 2rem;
+  block-size: 2rem;
+  padding: 0;
+  overflow: hidden;
+
+  &::-webkit-color-swatch-wrapper {
+    padding: 0;
+  }
+
+  &::-webkit-color-swatch {
+    border: none;
+  }
+}
+
+
+/* ── Range, Meter, Progress ── */
+
+[type="range"] {
+  appearance: auto;
+  inline-size: 100%;
+}
+
+
+/* ── Form Group ── */
+
+.form-group {
+  margin-block-end: var(--spacing-base);
+}
+
+
+/* ── Submit Feedback ──
+ * When any field in the form has a validation error,
+ * dim the submit button to signal the form isn't ready. */
+
+form:has(:user-invalid) [type="submit"] {
+  opacity: 0.6;
+}

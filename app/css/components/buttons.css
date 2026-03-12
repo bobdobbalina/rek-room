@@ -1,0 +1,206 @@
+/*
+ * ── Buttons ──
+ *
+ * Styles for <button>, <a role="button">, and submit/reset inputs.
+ * Uses component-scoped custom properties (--_ prefix) so variants
+ * only need to override property values, not redeclare entire rule blocks.
+ *
+ * Variants:  .secondary, .success, .error, .warning, .light, .dark
+ * Modifiers: .outline, .sm, .lg, .link/.text
+ *
+ * Override example:
+ *   button { --_bg: var(--color-tertiary); }
+ *
+ * _ prefix = component-scoped property, not part of public token API.
+ */
+
+button,
+a[role="button"],
+[type="button"],
+[type="reset"],
+[type="submit"] {
+
+  /* ── Component-scoped properties ──
+   * Variants override these instead of redeclaring every style rule.
+   * Hover defaults to the dark variant for a "press" effect. */
+  --_bg: var(--color-action);
+  --_border: var(--color-action);
+  --_color: var(--color-action-light-contrast);
+  --_bg-hover: var(--color-action-dark);
+  --_border-hover: var(--color-action-dark);
+  --_color-hover: var(--color-action-dark-contrast);
+
+  background-color: var(--_bg);
+  block-size: var(--control-block-size);
+  border: var(--border-width) var(--border-style) var(--_border);
+  border-radius: var(--border-radius);
+  color: var(--_color);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-family);
+  font-size: var(--control-font-size);
+  font-weight: var(--control-font-weight);
+  line-height: 1;
+  padding-inline: var(--control-padding-inline);
+  text-align: center;
+  text-decoration: none;
+  transition: all var(--animation-duration) var(--animation-timing);
+  vertical-align: middle;
+  white-space: nowrap;
+
+  /* Hover only on devices that support it — prevents sticky hover on touch */
+  @media (hover: hover) {
+    &:hover {
+      background-color: var(--_bg-hover);
+      border-color: var(--_border-hover);
+      color: var(--_color-hover);
+    }
+  }
+
+  &:focus-visible {
+    outline: var(--focus-outline);
+    outline-offset: var(--focus-outline-offset);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+  }
+
+
+  /* ── Size Modifiers ── */
+
+  &.lg,
+  &.large {
+    font-size: var(--font-size-body-lg);
+    block-size: var(--control-block-size-lg);
+    padding-inline: var(--control-padding-inline-lg);
+  }
+
+  &.sm,
+  &.small {
+    font-size: var(--font-size-body-sm);
+    block-size: var(--control-block-size-sm);
+    padding-inline: var(--control-padding-inline-sm);
+  }
+
+
+  /* ── Color Variants ──
+   * Each variant only sets custom properties instead of
+   * redeclaring the entire rule block. */
+
+  &.secondary {
+    --_bg: var(--color-secondary);
+    --_border: var(--color-secondary);
+    --_color: var(--color-secondary-light-contrast);
+    --_bg-hover: var(--color-secondary-dark);
+    --_border-hover: var(--color-secondary-dark);
+    --_color-hover: var(--color-secondary-dark-contrast);
+  }
+
+  &.success {
+    --_bg: var(--color-success);
+    --_border: var(--color-success);
+    --_color: var(--color-success-light-contrast);
+    --_bg-hover: var(--color-success-dark);
+    --_border-hover: var(--color-success-dark);
+    --_color-hover: var(--color-success-dark-contrast);
+  }
+
+  &.error {
+    --_bg: var(--color-error);
+    --_border: var(--color-error);
+    --_color: var(--color-error-light-contrast);
+    --_bg-hover: var(--color-error-dark);
+    --_border-hover: var(--color-error-dark);
+    --_color-hover: var(--color-error-dark-contrast);
+  }
+
+  &.warning {
+    --_bg: var(--color-warning);
+    --_border: var(--color-warning);
+    --_color: var(--color-warning-light-contrast);
+    --_bg-hover: var(--color-warning-dark);
+    --_border-hover: var(--color-warning-dark);
+    --_color-hover: var(--color-warning-dark-contrast);
+  }
+
+  &.light {
+    --_bg: var(--color-neutral-1);
+    --_border: var(--color-neutral-1);
+    --_color: var(--color-neutral-7);
+    --_bg-hover: var(--color-neutral-2);
+    --_border-hover: var(--color-neutral-2);
+    --_color-hover: var(--color-text-primary);
+  }
+
+  &.dark {
+    --_bg: var(--color-neutral-9);
+    --_border: var(--color-neutral-9);
+    --_color: var(--color-neutral-1);
+    --_bg-hover: var(--color-neutral-5);
+    --_border-hover: var(--color-neutral-5);
+    --_color-hover: var(--color-neutral-1);
+  }
+
+
+  /* ── Outline Modifier ──
+   * Transparent background with the variant's border color as text.
+   * On hover, fills with the dark variant. */
+
+  &.outline {
+    --_bg: transparent;
+    --_color: var(--_border);
+
+    /* Outline hover fills with the border color, text switches to contrast */
+    --_bg-hover: var(--_border);
+    --_color-hover: var(--color-action-dark-contrast);
+  }
+
+  /* Outline + variant combos need the correct contrast for their fill color */
+  &.outline.secondary {
+    --_color-hover: var(--color-secondary-light-contrast);
+  }
+
+  &.outline.success {
+    --_color-hover: var(--color-success-light-contrast);
+  }
+
+  &.outline.error {
+    --_color-hover: var(--color-error-light-contrast);
+  }
+
+  &.outline.warning {
+    --_color-hover: var(--color-warning-light-contrast);
+  }
+
+  &.outline.light {
+    --_color: var(--color-neutral-2);
+    --_border: var(--color-neutral-2);
+    --_bg-hover: var(--color-neutral-1);
+    --_border-hover: var(--color-neutral-5);
+    --_color-hover: var(--color-neutral-5);
+  }
+
+  &.outline.dark {
+    --_color: var(--color-text-primary);
+    --_border: var(--color-text-primary);
+    --_bg-hover: var(--color-text-primary);
+    --_border-hover: var(--color-text-primary);
+    --_color-hover: var(--color-neutral-1);
+  }
+
+
+  /* ── Link / Text Variant ──
+   * Looks like a text link, not a button. */
+
+  &.link,
+  &.text {
+    --_bg: transparent;
+    --_border: transparent;
+    --_color: var(--color-action);
+    --_bg-hover: transparent;
+    --_border-hover: transparent;
+    --_color-hover: var(--color-action-dark);
+  }
+}
