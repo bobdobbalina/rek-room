@@ -86,7 +86,7 @@
   touch-action: manipulation;
 }
 
-:where(button) {
+:where(button, [type="button"], [type="reset"], [type="submit"]) {
   cursor: pointer;
   user-select: none;
 }
@@ -197,32 +197,32 @@
  */
 
 html, body, table {
-  font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0;
+  font-feature-settings: "kern"1, "liga"1, "calt"1, "pnum"1, "tnum"0, "onum"1, "lnum"0;
   font-kerning: normal;
 }
 
 /* Discretionary ligatures on large headings */
 h1, h2, h3 {
-  font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 1;
+  font-feature-settings: "kern"1, "liga"1, "calt"1, "pnum"1, "tnum"0, "onum"1, "lnum"0, "dlig"1;
 }
 
 /* Small capitals for abbreviations */
 abbr {
-  font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "smcp" 1, "c2sc" 1;
+  font-feature-settings: "kern"1, "liga"1, "calt"1, "pnum"1, "tnum"0, "onum"1, "lnum"0, "smcp"1, "c2sc"1;
 }
 
 /* Tabular numerals and slashed zero in code */
 code, kbd, pre, samp {
-  font-feature-settings: "kern" 0, "liga" 0, "calt" 1, "dlig" 0, "pnum" 0, "tnum" 1, "onum" 0, "lnum" 1, "zero" 1;
+  font-feature-settings: "kern"0, "liga"0, "calt"1, "dlig"0, "pnum"0, "tnum"1, "onum"0, "lnum"1, "zero"1;
 }
 
 /* Proper superscript/subscript numerals */
 sup {
-  font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "sups" 1;
+  font-feature-settings: "kern"1, "liga"1, "calt"1, "pnum"1, "tnum"0, "onum"1, "lnum"0, "sups"1;
 }
 
 sub {
-  font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "subs" 1;
+  font-feature-settings: "kern"1, "liga"1, "calt"1, "pnum"1, "tnum"0, "onum"1, "lnum"0, "subs"1;
 }
 
 /* Lining numerals in numeric inputs */
@@ -234,10 +234,10 @@ input[type="number"],
 input[type="range"],
 input[type="tel"],
 input[type="time"] {
-  font-feature-settings: "kern" 0, "liga" 1, "calt" 1, "pnum" 1, "tnum" 0, "onum" 0, "lnum" 1;
+  font-feature-settings: "kern"0, "liga"1, "calt"1, "pnum"1, "tnum"0, "onum"0, "lnum"1;
 }
 
 /* Tabular numerals in table bodies and captions */
 tbody, caption {
-  font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "pnum" 0, "tnum" 1, "onum" 0, "lnum" 1, "zero" 1;
+  font-feature-settings: "kern"1, "liga"1, "calt"1, "pnum"0, "tnum"1, "onum"0, "lnum"1, "zero"1;
 }

@@ -70,11 +70,15 @@ textarea {
   border-radius: var(--border-radius);
   display: block;
   font-family: var(--font-family);
-  font-size: 1rem;
+  font-size: var(--control-font-size);
   inline-size: 100%;
   margin-block-end: var(--spacing-sm);
-  padding: calc(var(--spacing-base) / 3);
+  padding-inline: var(--control-padding-inline);
   transition: border-color var(--animation-duration) var(--animation-timing);
+
+  &:not(textarea, [type="color"]) {
+    block-size: var(--control-block-size);
+  }
 
   &:focus-visible {
     outline: var(--focus-outline);
@@ -105,6 +109,10 @@ textarea {
   &:user-valid {
     border-color: var(--color-success);
   }
+}
+
+textarea {
+  padding-block: calc(var(--control-padding-inline-sm) * 0.53);
 }
 
 
@@ -168,6 +176,7 @@ textarea {
 /* ── Range, Meter, Progress ── */
 
 [type="range"] {
+  appearance: auto;
   inline-size: 100%;
 }
 

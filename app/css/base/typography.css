@@ -33,7 +33,7 @@ html {
 
 ::selection {
   background-color: var(--color-action);
-  color: var(--color-action-contrast);
+  color: var(--color-action-light-contrast);
 }
 
 
@@ -46,6 +46,7 @@ html {
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   font-family: var(--font-family-heading);
+  font-weight: var(--font-weight-heading);
   line-height: var(--line-height-heading);
   margin-block-end: 0.5lh;
   text-box: trim-both cap alphabetic;
@@ -130,7 +131,7 @@ hr {
 /* ── Pre / Code ── */
 
 pre {
-  background-color: light-dark(var(--color-neutral-1), var(--color-neutral-9));
+  background-color: light-dark(var(--color-neutral-1), var(--color-neutral-8));
   border-radius: var(--border-radius);
   font-size: 0.875em;
   margin-block-end: var(--spacing-sm);

@@ -113,28 +113,30 @@
   --color-neutral-10: var(--color-black);
 
   /* ── Brand Colors ──
-   * Each brand color has a base, a lighter variant (relative color syntax),
-   * and a contrast color for text on that background.
+   * Each brand color has a base, light/dark variants (relative color syntax),
+   * and contrast colors for text on each variant's background.
    *
    * Relative color syntax: oklch(from <base> calc(l ± offset) c h)
    *   - Increase l to lighten, decrease to darken
-   *   - Multiply c to adjust saturation
    *   - All derived from one base — change the base, everything updates
    */
   --color-primary: #81A1C1;
   --color-primary-light: oklch(from var(--color-primary) calc(l + 0.15) c h);
-  --color-primary-dim: oklch(from var(--color-primary) calc(l - 0.15) c h);
-  --color-primary-contrast: var(--color-white);
+  --color-primary-dark: oklch(from var(--color-primary) calc(l - 0.15) c h);
+  --color-primary-light-contrast: var(--color-white);
+  --color-primary-dark-contrast: var(--color-white);
 
   --color-secondary: #B48EAD;
   --color-secondary-light: oklch(from var(--color-secondary) calc(l + 0.15) c h);
-  --color-secondary-dim: oklch(from var(--color-secondary) calc(l - 0.15) c h);
-  --color-secondary-contrast: var(--color-white);
+  --color-secondary-dark: oklch(from var(--color-secondary) calc(l - 0.15) c h);
+  --color-secondary-light-contrast: var(--color-white);
+  --color-secondary-dark-contrast: var(--color-white);
 
   --color-tertiary: #f1be5f;
   --color-tertiary-light: oklch(from var(--color-tertiary) calc(l + 0.15) c h);
-  --color-tertiary-dim: oklch(from var(--color-tertiary) calc(l - 0.15) c h);
-  --color-tertiary-contrast: var(--color-white);
+  --color-tertiary-dark: oklch(from var(--color-tertiary) calc(l - 0.15) c h);
+  --color-tertiary-light-contrast: var(--color-white);
+  --color-tertiary-dark-contrast: var(--color-white);
 
   /* ── Role Colors ──
    * Aliases that map brand colors to functional roles.
@@ -142,25 +144,34 @@
    */
   --color-action: var(--color-primary);
   --color-action-light: oklch(from var(--color-action) calc(l + 0.15) c h);
-  --color-action-dim: oklch(from var(--color-action) calc(l - 0.15) c h);
-  --color-action-contrast: var(--color-white);
+  --color-action-dark: oklch(from var(--color-action) calc(l - 0.15) c h);
+  --color-action-light-contrast: var(--color-white);
+  --color-action-dark-contrast: var(--color-white);
 
   --color-highlight: var(--color-secondary);
   --color-highlight-light: oklch(from var(--color-highlight) calc(l + 0.15) c h);
-  --color-highlight-contrast: var(--color-white);
+  --color-highlight-dark: oklch(from var(--color-highlight) calc(l - 0.15) c h);
+  --color-highlight-light-contrast: var(--color-white);
+  --color-highlight-dark-contrast: var(--color-white);
 
   /* ── Status Colors ── */
   --color-success: var(--color-green);
   --color-success-light: oklch(from var(--color-success) calc(l + 0.15) c h);
-  --color-success-contrast: var(--color-white);
+  --color-success-dark: oklch(from var(--color-success) calc(l - 0.15) c h);
+  --color-success-light-contrast: var(--color-white);
+  --color-success-dark-contrast: var(--color-white);
 
   --color-warning: var(--color-yellow);
   --color-warning-light: oklch(from var(--color-warning) calc(l + 0.15) c h);
-  --color-warning-contrast: var(--color-white);
+  --color-warning-dark: oklch(from var(--color-warning) calc(l - 0.15) c h);
+  --color-warning-light-contrast: var(--color-white);
+  --color-warning-dark-contrast: var(--color-white);
 
   --color-error: var(--color-red);
   --color-error-light: oklch(from var(--color-error) calc(l + 0.15) c h);
-  --color-error-contrast: var(--color-white);
+  --color-error-dark: oklch(from var(--color-error) calc(l - 0.15) c h);
+  --color-error-light-contrast: var(--color-white);
+  --color-error-dark-contrast: var(--color-white);
 
 
   /* ══════════════════════════════════════════════════════════
@@ -237,6 +248,9 @@
   --font-size-h2: calc(var(--font-size-base) * pow(var(--type-ratio), 3));
   --font-size-h1: calc(var(--font-size-base) * pow(var(--type-ratio), 4));
   --font-size-display: calc(var(--font-size-base) * pow(var(--type-ratio), 5));
+
+  /* Heading font weight */
+  --font-weight-heading: var(--font-weight-bold);
 
   /* Body text sizes */
   --font-size-body: var(--font-size-base);
@@ -360,9 +374,24 @@
 
 
   /* ══════════════════════════════════════════════════════════
-   * BUTTONS
+   * CONTROLS (buttons, inputs, selects)
+   *
+   * Shared sizing ensures buttons and inputs always match
+   * when placed side by side (e.g. search bar + button).
    * ══════════════════════════════════════════════════════════ */
 
-  --button-font-weight: var(--font-weight-normal);
-  --button-font-size: var(--font-size-body);
+  --control-block-size-sm: calc(var(--control-block-size) * 0.75);
+  --control-block-size: 3rem;
+  --control-block-size-lg: calc(var(--control-block-size) * 1.1875);
+
+  --control-font-size: calc(var(--font-size-body) * 0.875);
+  --control-font-weight: var(--font-weight-normal);
+
+  --control-padding-inline-sm: var(--spacing-xs);
+  --control-padding-inline: calc(var(--spacing-base) * 0.625);
+  --control-padding-inline-lg: calc(var(--spacing-base) * 0.875);
+  /* Backwards compat aliases */
+  ;
+  --button-font-weight: var(--control-font-weight);
+  --button-font-size: var(--control-font-size);
 }

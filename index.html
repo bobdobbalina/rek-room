@@ -10,9 +10,16 @@
   <!-- Styleguide-only presentation styles (not part of rek-room) -->
   <style>
     body {
-      max-inline-size: 64rem;
+      max-inline-size: 75rem;
       margin-inline: auto;
       padding: 4rem 2rem;
+    }
+
+    .section-header {
+      background-color: light-dark(var(--color-neutral-1), var(--color-neutral-7));
+      border-radius: var(--border-radius);
+      padding: var(--spacing-sm);
+      margin-block-end: var(--spacing-md);
     }
 
     /* ── Color Chips ── */
@@ -25,10 +32,11 @@
 
       & .color-chip {
         display: flex;
-        align-items: flex-end;
+        align-items: center;
         justify-content: center;
         inline-size: 5.5rem;
         block-size: 5.5rem;
+        border: var(--border);
         border-radius: calc(var(--border-radius) / 2);
         font-family: var(--font-tertiary-stack);
         font-size: 0.7rem;
@@ -176,7 +184,7 @@
 
   <!-- ── Colors ── -->
 
-  <h2 id="colors">Colors</h2>
+  <h2 id="colors" class="section-header">Colors</h2>
 
   <h3>Brand Colors</h3>
   <div class="chip-container brand">
@@ -252,7 +260,7 @@
 
   <!-- ── Headings ── -->
 
-  <h2 id="headings">Headings</h2>
+  <h2 id="headings" class="section-header">Headings</h2>
 
   <h2 class="display">Display</h2>
   <h1>Heading 1</h1>
@@ -260,9 +268,11 @@
   <h3>Heading 3</h3>
   <h4>Heading 4</h4>
   <h5>Heading 5</h5>
-  <h6>Heading 6</h6>
+  <h6  style="margin-bottom: var(--spacing-md);">Heading 6</h6>
 
-  <h3>Class-Based Overrides</h3>
+  <hr>
+
+  <h2 class="section-header">Class-Based Overrides</h2>
   <p>Use <code>.h1</code>&ndash;<code>.h6</code> classes to visually override heading size:</p>
   <h2 class="h4">h2 element with .h4 class</h2>
   <span class="h2">span element with .h2 class</span>
@@ -272,7 +282,7 @@
 
   <!-- ── Headings with Text ── -->
 
-  <h2 id="headings-with-text">Headings with Text</h2>
+  <h2 id="headings-with-text" class="section-header">Headings with Text</h2>
 
   <h1>Heading 1</h1>
   <p>Lorem ipsum dolor sit amet, adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.</p>
@@ -292,7 +302,7 @@
 
   <!-- ── Block Elements ── -->
 
-  <h2 id="text-block">Block Elements</h2>
+  <h2 id="text-block" class="section-header">Block Elements</h2>
 
   <h3 id="paragraph">Paragraphs and Images</h3>
 
@@ -327,7 +337,7 @@
 
   <!-- ── Details / Summary ── -->
 
-  <h2 id="details">Details / Summary</h2>
+  <h2 id="details" class="section-header">Details / Summary</h2>
 
   <p>Individual details element:</p>
   <details>
@@ -354,12 +364,12 @@
 
   <!-- ── Dialog ── -->
 
-  <h2 id="dialog">Dialog</h2>
+  <h2 id="dialog" class="section-header">Dialog</h2>
 
   <p>Native <code>&lt;dialog&gt;</code> with backdrop blur and entry/exit animations:</p>
   <button type="button" onclick="document.getElementById('demo-dialog').showModal()">Open Dialog</button>
 
-  <dialog id="demo-dialog">
+  <dialog id="demo-dialog" closedBy="any">
     <h3>Dialog Title</h3>
     <p>This is a native dialog element. It uses <code>@starting-style</code> for smooth open/close animations and <code>::backdrop</code> for the overlay.</p>
     <button type="button" onclick="this.closest('dialog').close()">Close</button>
@@ -370,7 +380,7 @@
 
   <!-- ── Popover ── -->
 
-  <h2 id="popover">Popover</h2>
+  <h2 id="popover" class="section-header">Popover</h2>
 
   <p>Native Popover API with <code>@starting-style</code> entry/exit animations:</p>
 
@@ -391,7 +401,7 @@
 
   <!-- ── Text Elements ── -->
 
-  <h2 id="text-elements">Text Elements</h2>
+  <h2 id="text-elements" class="section-header">Text Elements</h2>
 
   <p>The <a href="#">a element</a> and <a href="https://example.com" target="_blank">external a element</a> examples</p>
   <p>The <abbr>abbr element</abbr> and an <abbr title="Abbreviation">abbr</abbr> element with title examples</p>
@@ -424,7 +434,7 @@
 
   <!-- ── Monospace / Preformatted ── -->
 
-  <h2 id="monospace">Monospace / Preformatted</h2>
+  <h2 id="monospace" class="section-header">Monospace / Preformatted</h2>
 
   <p>Code block wrapped in <code>pre</code> and <code>code</code> tags:</p>
   <pre><code>// Loop through Divs using Javascript.
@@ -443,7 +453,7 @@ Nullam dignissim convallis est. Quisque aliquam.</pre>
 
   <!-- ── List Types ── -->
 
-  <h2 id="list-types">List Types</h2>
+  <h2 id="list-types" class="section-header">List Types</h2>
 
   <h3>Ordered List (reset)</h3>
   <ol style="margin-bottom: var(--spacing-md);">
@@ -534,7 +544,7 @@ Nullam dignissim convallis est. Quisque aliquam.</pre>
 
   <!-- ── Tables ── -->
 
-  <h2 id="tables">Tables</h2>
+  <h2 id="tables" class="section-header">Tables</h2>
 
   <table>
     <caption>This is a table caption</caption>
@@ -579,7 +589,7 @@ Nullam dignissim convallis est. Quisque aliquam.</pre>
 
   <!-- ── Progress & Meter ── -->
 
-  <h2 id="progress-meter">Progress &amp; Meter</h2>
+  <h2 id="progress-meter" class="section-header">Progress &amp; Meter</h2>
 
   <div class="form-group">
     <label for="progress-demo">Progress (65%):</label>
@@ -611,10 +621,10 @@ Nullam dignissim convallis est. Quisque aliquam.</pre>
 
   <!-- ── Media ── -->
 
-  <h2 id="media">Media</h2>
+  <h2 id="media" class="section-header">Media</h2>
 
   <h3>The Audio Element:</h3>
-  <audio controls>
+  <audio controls  style="margin-bottom: var(--spacing-md);">
     <source src="https://www.w3schools.com/tags/horse.ogg" type="audio/ogg" />
     <source src="https://www.w3schools.com/tags/horse.mp3" type="audio/mpeg" />
     Your browser does not support the audio element.
@@ -632,7 +642,7 @@ Nullam dignissim convallis est. Quisque aliquam.</pre>
 
   <!-- ── Form Elements ── -->
 
-  <h2 id="form-elements">Form Elements</h2>
+  <h2 id="form-elements" class="section-header">Form Elements</h2>
 
   <fieldset>
     <legend>Legend</legend>
@@ -846,7 +856,7 @@ Nullam dignissim convallis est. Quisque aliquam.</pre>
       <!-- Buttons -->
       <hr />
 
-      <h3>Buttons</h3>
+      <h2 id="buttons" class="section-header">Buttons</h2>
 
       <div class="form-group">
         <h4>HTML Elements</h4>

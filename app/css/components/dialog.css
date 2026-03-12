@@ -29,6 +29,7 @@ dialog {
   color: var(--color-text-body);
   max-inline-size: min(90vw, 40rem);
   padding: var(--spacing-lg);
+  overscroll-behavior: contain;
 
   /* Smooth open/close transitions */
   opacity: 1;
