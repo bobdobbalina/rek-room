@@ -18,7 +18,7 @@
  * Custom arrow via background SVG. Works in all modern browsers. */
 
 select {
-  --_select-bg: transparent;
+  --_select-bg: var(--color-surface);
   --_select-border: var(--border-color);
   --_select-arrow: var(--color-text-secondary);
 

@@ -90,12 +90,12 @@ a[role="button"],
    * redeclaring the entire rule block. */
 
   &.secondary {
-    --_bg: var(--color-secondary);
-    --_border: var(--color-secondary);
-    --_color: var(--color-secondary-light-contrast);
-    --_bg-hover: var(--color-secondary-dark);
-    --_border-hover: var(--color-secondary-dark);
-    --_color-hover: var(--color-secondary-dark-contrast);
+    --_bg: var(--color-primary-light);
+    --_border: var(--color-primary-light);
+    --_color: var(--color-primary);
+    --_bg-hover: var(--color-primary);
+    --_border-hover: var(--color-primary);
+    --_color-hover: var(--color-primary-dark-contrast);
   }
 
   &.success {

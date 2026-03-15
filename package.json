@@ -16,7 +16,7 @@
   ],
   "scripts": {
     "dev": "vite",
-    "build": "lightningcss --bundle --minify app/css/style.css -o dist/style.css",
+    "build": "lightningcss --bundle --minify app/css/style.css -o dist/steez.css",
     "prepublishOnly": "npm run build",
     "lint": "stylelint \"app/css/**/*.css\"",
     "lint:fix": "stylelint \"app/css/**/*.css\" --fix"

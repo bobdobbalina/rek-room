@@ -65,7 +65,7 @@ fieldset:has(:required) legend::after {
 [type="week"],
 input:not([type]),
 textarea {
-  background-color: transparent;
+  background-color: var(--color-surface);
   border: var(--border);
   border-radius: var(--border-radius);
   display: block;
