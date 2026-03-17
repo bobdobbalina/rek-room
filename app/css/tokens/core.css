@@ -120,8 +120,10 @@
    *   - Increase l to lighten, decrease to darken
    *   - All derived from one base — change the base, everything updates
    */
-  --color-primary: #C26C39;
-  --color-primary-light: #C26B381A;
+  --color-primary: #c26b38;
+  --color-primary-light: rgb(194 107 56 / 0.1);
+  --color-primary-border: rgb(194 107 56 / 0.05);
+  --color-primary-shadow: rgb(194 107 56 / 0.2);
   --color-primary-dark: oklch(from var(--color-primary) calc(l - 0.15) c h);
   --color-primary-light-contrast: var(--color-white);
   --color-primary-dark-contrast: var(--color-white);
@@ -180,15 +182,18 @@
    * light-dark() returns the first value in light mode,
    * the second value in dark mode — driven by color-scheme above.
    * ══════════════════════════════════════════════════════════ */
-
-  --color-surface: #C26B380D;
+  --color-surface: #fff;
   --color-surface-raised: light-dark(var(--color-neutral-0), var(--color-neutral-8));
-  --color-text-primary: light-dark(#0F172A, var(--color-neutral-1));
-  --color-text-secondary: light-dark(var(--color-neutral-6), var(--color-neutral-3));
+  --color-text-primary: #0f172a;
+  --color-text-secondary: #64748b;
+  --color-text-muted: #94a3b8;
+  --color-text-nav: #334155;
+  --color-text-light: #e2e8f0;
   --color-text-tertiary: light-dark(var(--color-secondary), var(--color-secondary-light));
   --color-text-body: light-dark(var(--color-neutral-8), var(--color-neutral-2));
   --color-border: light-dark(var(--color-primary), var(--color-neutral-7));
-  --color-viewport-background: #F8F7F6CC;
+  --color-viewport-background: #f8f7f6;
+  --color-viewport-background-translucent: rgb(248 247 246 / 0.8);
 
 
   /* ══════════════════════════════════════════════════════════
@@ -200,7 +205,7 @@
    * if using custom @font-face declarations.
    */
   --font-primary-stack: 'Varela Round', system-ui, -apple-system, blinkmacsystemfont, 'Segoe UI', roboto, sans-serif;
-  --font-secondary-stack: 'DM Sans', system-ui, -apple-system, blinkmacsystemfont, 'Segoe UI', roboto, sans-serif;
+  --font-secondary-stack: --font-family: "Space Grotesk", sans-serif;
   --font-tertiary-stack: ui-monospace, "Cascadia Code", "Source Code Pro", menlo, consolas, "DejaVu Sans Mono", monospace;
 
   --font-family: var(--font-primary-stack);
@@ -276,7 +281,8 @@
   --spacing-md: var(--spacing-base);
   --spacing-lg: calc(var(--spacing-base) * 1.5);
   --spacing-xl: calc(var(--spacing-base) * 2);
-
+  --spacing-2xl: calc(var(--spacing-base) * 3);
+  --spacing-3xl: calc(var(--spacing-base) * 5);
 
   /* ══════════════════════════════════════════════════════════
    * ANIMATION / EASING
@@ -335,7 +341,8 @@
   --border: var(--border-width) var(--border-style) var(--border-color);
 
   --border-radius: 0.5rem;
-
+  --border-radius-lg: 0.75rem;
+  --border-radius-full: 9999px;
 
   /* ══════════════════════════════════════════════════════════
    * FOCUS
@@ -353,8 +360,7 @@
    * for visibility against dark backgrounds.
    * ══════════════════════════════════════════════════════════ */
 
-  --elevation-1: 0 1px 2px light-dark(rgb(0 0 0 / 0.1), rgb(0 0 0 / 0.4)),
-    0 1px 3px 1px light-dark(rgb(0 0 0 / 0.08), rgb(0 0 0 / 0.25));
+  --elevation-1: 0px 1px 2px 0px rgb(0 0 0 / 0.05);
   --elevation-2: 0 1px 2px light-dark(rgb(0 0 0 / 0.1), rgb(0 0 0 / 0.4)),
     0 2px 6px 2px light-dark(rgb(0 0 0 / 0.08), rgb(0 0 0 / 0.25));
   --elevation-3: 0 3px 9px 3px light-dark(rgb(0 0 0 / 0.06), rgb(0 0 0 / 0.3)),
